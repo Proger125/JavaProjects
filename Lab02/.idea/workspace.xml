@@ -19,10 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5dc104a2-69ec-4c15-9571-9f84bd04aa5e" name="Default Changelist" comment="Final">
+    <list default="true" id="5dc104a2-69ec-4c15-9571-9f84bd04aa5e" name="Default Changelist" comment="Adding exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BracketsWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BracketsWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StringWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StringWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1602517946401</updated>
       <workItem from="1602517947535" duration="7368000" />
-      <workItem from="1602656364531" duration="2846000" />
+      <workItem from="1602656364531" duration="4182000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Lab02">
       <created>1602519222401</created>
@@ -113,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602524675317</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding exceptions">
+      <created>1602665361651</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602665361651</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,7 +140,8 @@
     <MESSAGE value="Starting Lab02" />
     <MESSAGE value="Adding BracketsWorker class with findMaxLevelBrackets function" />
     <MESSAGE value="Final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Final" />
+    <MESSAGE value="Adding exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding exceptions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="0" key="#Project_Structure" timestamp="1602517960847">
@@ -150,41 +156,49 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="637" y="162" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602518455075" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1602656968250">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1602674546318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602656968250" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1602656968250">
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602674546318" />
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602656968250" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1602656968250">
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.0.center" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602656968250" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1602656968250">
+    <state width="1493" height="218" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.0.left" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602656968250" />
-    <state width="1493" height="218" key="GridCell.Tab.1.bottom" timestamp="1602656901178">
+    <state width="1493" height="218" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.0.right" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602656901178" />
-    <state width="1493" height="218" key="GridCell.Tab.1.center" timestamp="1602656901178">
+    <state width="1493" height="218" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.1.bottom" timestamp="1602674581822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602656901178" />
-    <state width="1493" height="218" key="GridCell.Tab.1.left" timestamp="1602656901178">
+    <state width="1493" height="218" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602674581822" />
+    <state width="1493" height="218" key="GridCell.Tab.1.center" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602656901178" />
-    <state width="1493" height="218" key="GridCell.Tab.1.right" timestamp="1602656901178">
+    <state width="1493" height="218" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.1.left" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="218" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602656901178" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602524691733">
+    <state width="1493" height="218" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1602674581821" />
+    <state width="1493" height="218" key="GridCell.Tab.1.right" timestamp="1602674581822">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602524691733" />
+    <state width="1493" height="218" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1602674581822" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602665368056">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1602665368056" />
+    <state x="209" y="33" key="new project wizard" timestamp="1602674568241">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1602674568241" />
   </component>
 </project>
