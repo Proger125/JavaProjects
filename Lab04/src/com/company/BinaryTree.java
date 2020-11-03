@@ -1,13 +1,13 @@
 package com.company;
 
 public class BinaryTree<T extends Comparable<T>>{
-    Node root;
-    public void Add(T value){
+    private Node<T> root;
+    public void add(T value){
         root = addRecursive(root, value);
     }
-    private Node addRecursive(Node current, T value){
+    private Node<T> addRecursive(Node<T> current, T value){
         if (current == null){
-            return new Node(value);
+            return new Node<T>(value);
         }
         if (current.value.compareTo(value) > 0){
             current.left = addRecursive(current.left, value);
@@ -21,7 +21,7 @@ public class BinaryTree<T extends Comparable<T>>{
     public boolean containsNode(T value){
         return containsNodeRecursive(root, value);
     }
-    private boolean containsNodeRecursive(Node current, T value){
+    private boolean containsNodeRecursive(Node<T> current, T value){
         if (current == null){
             return false;
         }
@@ -32,10 +32,10 @@ public class BinaryTree<T extends Comparable<T>>{
                 ? containsNodeRecursive(current.right, value)
                 : containsNodeRecursive(current.left, value);
     }
-    public void Delete(T value){
+    public void delete(T value){
         root = deleteRecursive(root, value);
     }
-    private Node deleteRecursive(Node current, T value){
+    private Node<T> deleteRecursive(Node<T> current, T value){
         if (current == null){
             return null;
         }
@@ -61,28 +61,37 @@ public class BinaryTree<T extends Comparable<T>>{
         current.right = deleteRecursive(current.right, value);
         return current;
     }
-    private T findSmallestValue(Node root){
-        return root.left == null ? (T)root.value : findSmallestValue(root.left);
+    private T findSmallestValue(Node<T> root){
+        return root.left == null ? root.value : findSmallestValue(root.left);
     }
-    public void traverseInOrder(Node node){
+    public void detourInOrder(){
+        traverseInOrder(this.root);
+    }
+    private void traverseInOrder(Node<T> node){
         if (node != null){
             traverseInOrder(node.left);
-            System.out.print(" " + node.value);
+            System.out.print(" " + node.value.toString());
             traverseInOrder(node.right);
         }
     }
-    public void traversePreOrder(Node node){
+    public void detourPreOrder(){
+        traversePreOrder(this.root);
+    }
+    private void traversePreOrder(Node<T> node){
         if (node != null){
-            System.out.print(" " + node.value);
+            System.out.print(" " + node.value.toString());
             traversePreOrder(node.left);
             traversePreOrder(node.right);
         }
     }
-    public void traversePostOrder(Node node){
+    public void detourPostOrder(){
+        traversePostOrder(this.root);
+    }
+    private void traversePostOrder(Node<T> node){
         if (node != null){
             traversePostOrder(node.left);
             traversePostOrder(node.right);
-            System.out.print(" " + node.value);
+            System.out.print(" " + node.value.toString());
         }
     }
 }
