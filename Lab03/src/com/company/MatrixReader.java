@@ -27,7 +27,10 @@ public class MatrixReader {
             for (int j = 0; j < n; j++){
                 if (scanner.hasNextDouble()){
                     array[i][j] = scanner.nextDouble();
-                }else{
+                }else if(scanner.hasNext()){
+                    throw new IOException("Your file should contain only numbers");
+                }
+                else{
                     throw new IOException("Your file should contain " + (n * m) + " elements");
                 }
             }

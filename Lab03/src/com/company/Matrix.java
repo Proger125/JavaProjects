@@ -59,7 +59,7 @@ public class Matrix {
         data = matrix.data;
         isSquare = matrix.IsMatrixSquare();
     }
-    public Matrix Gauss(int amountOfAnswerVectors) throws ArrayIndexOutOfBoundsException, ArithmeticException{
+    public Matrix gauss(int amountOfAnswerVectors) throws ArrayIndexOutOfBoundsException, ArithmeticException{
         if (amountOfAnswerVectors > this.m){
             throw new ArrayIndexOutOfBoundsException("The number of answer vectors is incorrect");
         }
@@ -76,7 +76,7 @@ public class Matrix {
                 data[k][i] = data[k][i] / diagonalElement;
             }
             for (int i = k + 1; i < size; i++){
-                double K = data[i][k] / diagonalElement;
+                double K = data[i][k] / data[k][k];
                 for (int j = 0; j < size + amountOfAnswerVectors; j++){
                     data[i][j] = data[i][j] - data[k][j] * K;
                 }

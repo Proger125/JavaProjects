@@ -20,7 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dc104a2-69ec-4c15-9571-9f84bd04aa5e" name="Default Changelist" comment="Adding exceptions">
+      <change afterPath="$PROJECT_DIR$/../Lab05/src/com/company/ExponentialSeries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05/src/com/company/LinearSeries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05/src/com/company/View.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab05/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab03/resources/Matrix.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03/resources/Matrix.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab03/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab03/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab05/src/com/company/Series.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab05/src/com/company/Series.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +55,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab03" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -60,15 +69,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,6 +96,7 @@
       <updated>1602517946401</updated>
       <workItem from="1602517947535" duration="7368000" />
       <workItem from="1602656364531" duration="4182000" />
+      <workItem from="1604476860346" duration="790000" />
     </task>
     <task id="LOCAL-00001" summary="Starting Lab02">
       <created>1602519222401</created>
@@ -156,10 +164,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="637" y="162" key="EnvironmentVariablesDialog/0.0.1536.824@0.0.1536.824" timestamp="1602518455075" />
-    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1602674546318">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1604477218073">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602674546318" />
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1604477218073" />
     <state width="1493" height="218" key="GridCell.Tab.0.bottom" timestamp="1602674581821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
