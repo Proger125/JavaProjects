@@ -11,25 +11,28 @@ public class SecondTaskPanel extends JPanel {
     public SecondTaskPanel(LayoutManager manager){
         super(manager);
         GridLayout layout = (GridLayout)manager;
+        ButtonClickListener listener = new ButtonClickListener();
         for (int i = 0; i < layout.getRows(); i++){
             for (int j = 0; j < layout.getColumns(); j++){
-                JButton button = new JButton("Кнопка");
+                JButton button = new JButton("Кнопка " + (i + j));
                 button.setBackground(Color.CYAN);
-                button.addMouseListener(new ButtonClickListener());
+                button.addMouseListener(listener);
                 this.add(button);
             }
         }
     }
     private class ButtonClickListener extends MouseAdapter{
+        private String previousName;
         @Override
         public void mouseReleased(MouseEvent e) {
             JButton button = (JButton)e.getSource();
-            button.setText("Кнопка");
+            button.setText(previousName);
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
             JButton button = (JButton)e.getSource();
+            previousName = button.getText();
             button.setText("Clicked");
         }
 

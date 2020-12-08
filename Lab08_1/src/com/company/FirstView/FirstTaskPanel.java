@@ -1,55 +1,55 @@
 package com.company.FirstView;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 public class FirstTaskPanel extends JPanel {
-    private JTextArea leftArea = new JTextArea(15, 10);
-    public void setLeftAreaText(ArrayList<String> list){
-        leftArea.setText("");
-        if (list.size() != 0){
-            for (int i = 0; i < list.size(); i++) {
-                leftArea.append(list.get(i) + "\n");
-            }
-        }
-    }
-    public String getLeftAreaText(){
-        return leftArea.getText();
-    }
-    private JTextArea rightArea = new JTextArea(15, 10);
-    public void setRightAreaText(ArrayList<String> list){
-        rightArea.setText("");
-        if (list.size() != 0){
-            for (int i = 0; i < list.size(); i++) {
-                rightArea.append(list.get(i) + "\n");
-            }
-        }
-    }
-    public String getRightAreaText(){
-        return rightArea.getText();
-    }
-    private JButton toRightButton = new JButton(">");
-    private JButton toLeftButton = new JButton("<");
-    private Controller controller = new Controller(this);
+    private final JButton toRightButton = new JButton(">");
+    private final JButton toLeftButton = new JButton("<");
+    private final Controller controller = new Controller(this);
+    private final JList<String> leftList = new JList<String>(controller.getList1());
+    private final JList<String> rightList = new JList<String>(controller.getList2());
     public FirstTaskPanel(LayoutManager manager){
         super(manager);
-        this.add(leftArea, BorderLayout.WEST);
-        this.add(rightArea, BorderLayout.EAST);
-        this.add(toLeftButton, BorderLayout.SOUTH);
-        this.add(toRightButton, BorderLayout.NORTH);
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(toLeftButton, BorderLayout.SOUTH);
+        panel.add(toRightButton, BorderLayout.NORTH);
+        this.add(leftList, BorderLayout.WEST);
+        this.add(rightList, BorderLayout.EAST);
+        this.add(panel, BorderLayout.CENTER);
+        //this.add(toLeftButton, BorderLayout.SOUTH);
+        //this.add(toRightButton, BorderLayout.NORTH);
         toLeftButton.addMouseListener(new MyClickListener());
         toRightButton.addMouseListener(new MyClickListener());
     }
     private class MyClickListener extends MouseAdapter{
         @Override
         public void mouseClicked(MouseEvent e) {
-            if (e.getSource() == toLeftButton){
-                controller.leftTransfer();
+            JButton button = (JButton)e.getSource();
+            if (button == toLeftButton){
+                if (!rightList.isSelectionEmpty()){
+                    int[] indexes = rightList.getSelectedIndices();
+                    for (int i = 0; i < indexes.length; i++){
+                        controller.getList1().addElement(controller.getList2().getElementAt(indexes[i]));
+                    }
+                    for (int i = 0; i < indexes.length; i++){
+                        controller.getList2().removeElementAt(indexes[i] - i);
+                    }
+                }
             }else{
-                controller.rightTransfer();
+                if (!leftList.isSelectionEmpty()){
+                    int[] indexes = leftList.getSelectedIndices();
+                    for (int i = 0; i < indexes.length; i++){
+                        controller.getList2().addElement(controller.getList1().getElementAt(indexes[i]));
+                    }
+                    for (int i = 0; i < indexes.length; i++){
+                        controller.getList1().removeElementAt(indexes[i] - i);
+                    }
+                }
             }
         }
     }

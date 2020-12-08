@@ -117,11 +117,11 @@ public class Matrix {
             ArrayList<Integer> indexRows = MinElementsRows();
             ArrayList<Integer> indexCols = MaxElementsCols();
             ArrayList<Double> resultList = new ArrayList<Double>();
-            for (Integer indexRow : indexRows) {
-                for (Integer indexCol : indexCols) {
+            for (int i = 0; i < indexRows.size(); i++) {
+                for (int j = 0; j < indexCols.size(); j++) {
                     double result = 0.0;
-                    for (int i = 0; i < m; i++) {
-                        result += data[indexRow][i] * data[i][indexCol];
+                    for (int k = 0; k < m; k++) {
+                        result += data[indexRows.get(i)][k] * data[k][indexCols.get(j)];
                     }
                     resultList.add(result);
                 }
@@ -136,27 +136,39 @@ public class Matrix {
     private ArrayList<Integer> MinElementsRows(){
         ArrayList<Integer> list = new ArrayList<Integer>();
         double minElement = data[0][0];
-        for (double[] datum : data) {
+        for (int i = 0; i < data[0].length; i++) {
             for (int j = 0; j < data[0].length; j++) {
-                if (datum[j] < minElement) {
-                    minElement = datum[j];
+                if (data[i][j] < minElement) {
+                    minElement = data[i][j];
                 }
             }
         }
-        list = AddToArrayListIfEqualTo(minElement);
+        for (int i = 0; i < data[0].length; i++) {
+            for (int j = 0; j < data[0].length; j++) {
+                if (data[i][j] == minElement) {
+                    list.add(i);
+                }
+            }
+        }
         return list;
     }
     private ArrayList<Integer> MaxElementsCols(){
         ArrayList<Integer> list = new ArrayList<Integer>();
         double maxElement = data[0][0];
-        for (double[] datum : data) {
+        for (int i = 0; i < data[0].length; i++) {
             for (int j = 0; j < data[0].length; j++) {
-                if (datum[j] > maxElement) {
-                    maxElement = datum[j];
+                if (data[i][j] > maxElement) {
+                    maxElement = data[i][j];
                 }
             }
         }
-        list = AddToArrayListIfEqualTo(maxElement);
+        for (int i = 0; i < data[0].length; i++) {
+            for (int j = 0; j < data[0].length; j++) {
+                if (data[i][j] == maxElement) {
+                    list.add(j);
+                }
+            }
+        }
         return list;
     }
     private ArrayList<Integer> AddToArrayListIfEqualTo(double element){
