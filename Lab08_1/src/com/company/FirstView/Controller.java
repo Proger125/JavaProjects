@@ -6,9 +6,7 @@ import javax.swing.*;
 public class Controller {
     private final DefaultListModel<String> list1 = new DefaultListModel<>();
     private final DefaultListModel<String> list2 = new DefaultListModel<>();
-    private final FirstTaskPanel panel;
-    public Controller(FirstTaskPanel panel) {
-        this.panel = panel;
+    public Controller() {
         list1.addElement("1");
         list1.addElement("2");
         list1.addElement("3");

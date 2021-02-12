@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+        <students>
+            <student id = "1" name = "Иванов" course = "2" group = "1"/>
+            <student id = "2" name = "Петров" course = "1" group = "5"/>
+            <student id = "3" name = "Сидоров" course = "3" group = "4"/>
+            <student id = "4" name = "Сумкин" course = "2" group = "5"/>
+            <student id = "5" name = "Петров" course = "4" group = "8"/>
+            <student id = "6" name = "Китаров" course = "1" group = "1"/>
+            <student id = "7" name = "Иванов" course = "3" group = "6"/>
+            <student id = "8" name = "Петров" course = "4" group = "10"/>
+            <student id = "9" name = "Пупкин" course = "4" group = "10"/>
+            <student id = "10" name = "Сумкин" course = "4" group = "10"/>
+            <student id = "11" name = "Пупкин" course = "4" group = "10"/>
+        </students>

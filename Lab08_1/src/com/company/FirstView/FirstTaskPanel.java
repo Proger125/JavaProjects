@@ -1,16 +1,14 @@
 package com.company.FirstView;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 public class FirstTaskPanel extends JPanel {
     private final JButton toRightButton = new JButton(">");
     private final JButton toLeftButton = new JButton("<");
-    private final Controller controller = new Controller(this);
+    private final Controller controller = new Controller();
     private final JList<String> leftList = new JList<String>(controller.getList1());
     private final JList<String> rightList = new JList<String>(controller.getList2());
     public FirstTaskPanel(LayoutManager manager){
@@ -21,8 +19,6 @@ public class FirstTaskPanel extends JPanel {
         this.add(leftList, BorderLayout.WEST);
         this.add(rightList, BorderLayout.EAST);
         this.add(panel, BorderLayout.CENTER);
-        //this.add(toLeftButton, BorderLayout.SOUTH);
-        //this.add(toRightButton, BorderLayout.NORTH);
         toLeftButton.addMouseListener(new MyClickListener());
         toRightButton.addMouseListener(new MyClickListener());
     }

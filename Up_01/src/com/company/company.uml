@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company</OriginalElement>
+  <nodes>
+    <node x="269.9359913793104" y="1426.0">com.company.Country</node>
+    <node x="50.24999999999997" y="1970.0">com.company.Reader</node>
+    <node x="200.1403735632184" y="0.0">com.company.City</node>
+    <node x="144.8109913793103" y="968.0">com.company.Region</node>
+    <node x="262.92557471264365" y="2252.0">com.company.Main</node>
+    <node x="46.5" y="466.0">com.company.District</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.Reader" target="com.company.District">
+      <point x="-16.81249999999997" y="-116.0" />
+      <point x="167.9375" y="1920.0" />
+      <point x="118.49849137931034" y="1920.0" />
+      <point x="118.49849137931034" y="943.0" />
+      <point x="139.5" y="943.0" />
+      <point x="-31.0" y="226.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Reader">
+      <point x="-56.25" y="-27.0" />
+      <point x="281.67557471264365" y="2232.0" />
+      <point x="117.49999999999997" y="2232.0" />
+      <point x="-67.25" y="116.0" />
+    </edge>
+    <edge source="com.company.District" target="com.company.City">
+      <point x="-82.66666666666666" y="-226.0" />
+      <point x="87.83333333333334" y="426.0" />
+      <point x="259.1403735632184" y="426.0" />
+      <point x="-59.0" y="193.0" />
+    </edge>
+    <edge source="com.company.Reader" target="com.company.Country">
+      <point x="84.06250000000003" y="-116.0" />
+      <point x="268.8125" y="1940.0" />
+      <point x="313.7693247126437" y="1940.0" />
+      <point x="-87.66666666666669" y="237.0" />
+    </edge>
+    <edge source="com.company.Country" target="com.company.City">
+      <point x="98.62499999999996" y="-237.0" />
+      <point x="500.06099137931034" y="1401.0" />
+      <point x="472.869540229885" y="1401.0" />
+      <point x="472.869540229885" y="436.0" />
+      <point x="400.7403735632183" y="436.0" />
+      <point x="82.59999999999997" y="193.0" />
+    </edge>
+    <edge source="com.company.Country" target="com.company.Region">
+      <point x="-98.62500000000006" y="-237.0" />
+      <point x="302.81099137931034" y="1401.0" />
+      <point x="319.1859913793103" y="1401.0" />
+      <point x="34.875" y="204.0" />
+    </edge>
+    <edge source="com.company.Region" target="com.company.District">
+      <point x="-104.625" y="-204.0" />
+      <point x="179.6859913793103" y="943.0" />
+      <point x="201.5" y="943.0" />
+      <point x="31.0" y="226.0" />
+    </edge>
+    <edge source="com.company.Reader" target="com.company.City">
+      <point x="-84.06249999999997" y="-116.0" />
+      <point x="100.6875" y="1940.0" />
+      <point x="36.0" y="1940.0" />
+      <point x="36.0" y="416.0" />
+      <point x="235.54037356321837" y="416.0" />
+      <point x="-82.60000000000002" y="193.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.City">
+      <point x="56.25000000000001" y="-27.0" />
+      <point x="394.17557471264365" y="2232.0" />
+      <point x="543.4359913793104" y="2232.0" />
+      <point x="543.4359913793104" y="426.0" />
+      <point x="424.34037356321835" y="426.0" />
+      <point x="106.19999999999999" y="193.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Country">
+      <point x="18.750000000000007" y="-27.0" />
+      <point x="356.67557471264365" y="2222.0" />
+      <point x="487.9262931034483" y="2222.0" />
+      <point x="487.9262931034483" y="1950.0" />
+      <point x="489.1026580459771" y="1950.0" />
+      <point x="87.6666666666667" y="237.0" />
+    </edge>
+    <edge source="com.company.Region" target="com.company.City">
+      <point x="104.625" y="-204.0" />
+      <point x="388.9359913793103" y="943.0" />
+      <point x="364.74454022988505" y="943.0" />
+      <point x="364.74454022988505" y="446.0" />
+      <point x="353.5403735632184" y="446.0" />
+      <point x="35.39999999999998" y="193.0" />
+    </edge>
+    <edge source="com.company.Reader" target="com.company.Region">
+      <point x="50.43750000000003" y="-116.0" />
+      <point x="235.1875" y="1950.0" />
+      <point x="231.59295977011493" y="1950.0" />
+      <point x="231.59295977011493" y="1401.0" />
+      <point x="249.4359913793103" y="1401.0" />
+      <point x="-34.875" y="204.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="359.0" y="315.0" />
+  <SelectedNodes>
+    <node>com.company.Country</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

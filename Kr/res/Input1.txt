@@ -1,0 +1,4 @@
+Ivanov BSU 100 1 9,5
+Petrov BNTU 80 4 7,3
+Sidorov BSUIR 10 3 4,5
+Ivanov BSU 100 1 9,5

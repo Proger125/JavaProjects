@@ -1,0 +1,3 @@
+Ivanov school1 100 9,5 5 APPROXIMATE
+Petrov school2 90 8,5 3 APPROXIMATE
+Sidorov school3 80 7,5 8 APPROXIMATE
