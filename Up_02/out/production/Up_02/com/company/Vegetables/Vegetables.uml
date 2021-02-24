@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company.Vegetables</OriginalElement>
+  <nodes>
+    <node x="132.0" y="190.0">com.company.Vegetables.Tomato</node>
+    <node x="232.0" y="80.0">com.company.Vegetables.Vegetable</node>
+    <node x="356.0" y="190.0">com.company.Vegetables.Cabbage</node>
+    <node x="480.0" y="190.0">com.company.Vegetables.Carrot</node>
+    <node x="248.0" y="190.0">com.company.Vegetables.Onion</node>
+    <node x="0.0" y="190.0">com.company.Vegetables.Cucumber</node>
+    <node x="212.0" y="0.0">com.company.Vegetables.VegetableState</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.Vegetables.Carrot" target="com.company.Vegetables.Vegetable">
+      <point x="24.0" y="-15.0" />
+      <point x="552.0" y="130.0" />
+      <point x="346.0" y="130.0" />
+      <point x="54.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Vegetables.Onion" target="com.company.Vegetables.Vegetable">
+      <point x="-22.0" y="-15.0" />
+      <point x="270.0" y="170.0" />
+      <point x="286.0" y="170.0" />
+      <point x="-6.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Vegetables.Tomato" target="com.company.Vegetables.Vegetable">
+      <point x="-24.0" y="-15.0" />
+      <point x="156.0" y="150.0" />
+      <point x="262.0" y="150.0" />
+      <point x="-30.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Vegetables.Cabbage" target="com.company.Vegetables.Vegetable">
+      <point x="-26.0" y="-15.0" />
+      <point x="382.0" y="160.0" />
+      <point x="310.0" y="160.0" />
+      <point x="18.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Vegetables.Cucumber" target="com.company.Vegetables.Vegetable">
+      <point x="28.0" y="-15.0" />
+      <point x="84.0" y="140.0" />
+      <point x="250.0" y="140.0" />
+      <point x="-42.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="288.0" y="110.0" />
+  <SelectedNodes>
+    <node>com.company.Vegetables.Cucumber</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

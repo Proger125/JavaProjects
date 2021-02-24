@@ -3,11 +3,8 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Country {
-    private String name;
+public class Country extends AdministrativeUnit{
     private City capital;
-    private Integer population = 0;
-    private Double area = 0.0;
     private ArrayList<Region> regions;
 
     public String getName() {
@@ -19,7 +16,7 @@ public class Country {
     }
 
     public Country(String name, City capital, ArrayList<Region> regions){
-        this.name = name;
+        super(name);
         this.capital = capital;
         this.regions = new ArrayList<>();
         for (Region region : regions) {
@@ -96,5 +93,19 @@ public class Country {
             }
         }
         return isAreaEquals && isCenterEquals && isRegionEquals && isNameEquals && isPopulationEquals;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Название страны: ").append(this.name).append(", ");
+        builder.append("Столица: ").append(this.capital.getCityName()).append(", ");
+        builder.append("Население страны: ").append(this.population).append(", ");
+        builder.append("Площадь страны: ").append(this.area).append('\n');
+        builder.append("Области: ").append('\n');
+        for(Region region: regions){
+            builder.append(region.toString());
+        }
+        return builder.toString();
     }
 }

@@ -2,10 +2,7 @@ package com.company;
 
 import java.util.Objects;
 
-public class City {
-    private String cityName;
-    private Integer cityPopulation;
-    private Double cityArea;
+public class City extends AdministrativeUnit{
     private String label;
 
     public String getLabel() {
@@ -17,45 +14,43 @@ public class City {
     }
 
     public City(String cityName, Double cityArea, Integer cityPopulation, String label){
-        this.cityArea = cityArea;
-        this.cityName = cityName;
-        this.cityPopulation = cityPopulation;
+        super(cityName, cityPopulation, cityArea);
         this.label = label;
     }
     public Double getCityArea() {
-        return cityArea;
+        return super.getArea();
     }
 
     public void setCityArea(Double cityArea) {
-        this.cityArea = cityArea;
+        super.setArea(cityArea);
     }
 
     public void setCityName(String cityName) {
-        this.cityName = cityName;
+        super.setName(cityName);
     }
 
     public void setCityPopulation(Integer cityPopulation) {
-        this.cityPopulation = cityPopulation;
+        super.setPopulation(cityPopulation);
     }
 
     public String getCityName() {
-        return cityName;
+        return super.getName();
     }
 
     public Integer getCityPopulation() {
-        return cityPopulation;
+        return super.getPopulation();
     }
 
     @Override
     public String toString() {
-        return "Город: " + cityName + ", " +
-                "Население: " + cityPopulation + "ч., " +
-                "Площадь: " + cityArea + "км^2\n";
+        return "Город: " + name + ", " +
+                "Население: " + population + "ч., " +
+                "Площадь: " + area + "км^2\n";
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.cityName);
+        return Objects.hash(this.name);
     }
 
     @Override
@@ -67,9 +62,9 @@ public class City {
             return false;
         }
         City city = (City) obj;
-        boolean isNameEquals = Objects.equals(this.cityName, city.cityName);
-        boolean isAreaEquals = Objects.equals(this.cityArea, city.cityArea);
-        boolean isPopulationEquals = Objects.equals(this.cityPopulation, city.cityPopulation);
+        boolean isNameEquals = Objects.equals(this.name, city.name);
+        boolean isAreaEquals = Objects.equals(this.area, city.area);
+        boolean isPopulationEquals = Objects.equals(this.population, city.population);
         boolean isLabelEquals = Objects.equals(this.label, city.label);
         return isNameEquals && isAreaEquals && isPopulationEquals && isLabelEquals;
     }

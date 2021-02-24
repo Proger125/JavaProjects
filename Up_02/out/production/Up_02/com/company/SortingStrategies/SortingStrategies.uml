@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company.SortingStrategies</OriginalElement>
+  <nodes>
+    <node x="264.0" y="0.0">com.company.SortingStrategies.Sorting</node>
+    <node x="0.0" y="80.0">com.company.SortingStrategies.SortingByCalories</node>
+    <node x="448.0" y="80.0">com.company.SortingStrategies.SortingByProteins</node>
+    <node x="204.0" y="80.0">com.company.SortingStrategies.SortingByCarbohydrates</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.SortingStrategies.SortingByCalories" target="com.company.SortingStrategies.Sorting">
+      <point x="0.0" y="-15.0" />
+      <point x="92.0" y="55.0" />
+      <point x="281.3333333333333" y="55.0" />
+      <point x="-34.666666666666686" y="15.0" />
+    </edge>
+    <edge source="com.company.SortingStrategies.SortingByCarbohydrates" target="com.company.SortingStrategies.Sorting">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.company.SortingStrategies.SortingByProteins" target="com.company.SortingStrategies.Sorting">
+      <point x="0.0" y="-15.0" />
+      <point x="540.0" y="55.0" />
+      <point x="350.66666666666663" y="55.0" />
+      <point x="34.66666666666663" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="316.0" y="55.0" />
+  <SelectedNodes>
+    <node>com.company.SortingStrategies.SortingByCarbohydrates</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

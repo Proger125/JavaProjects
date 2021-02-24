@@ -3,21 +3,18 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Region {
-    private String regionName;
+public class Region extends AdministrativeUnit{
     private City regionCenter;
-    private Integer regionPopulation = 0;
-    private Double regionArea = 0.0;
     private ArrayList<District> regionDistricts;
 
     public Region(String regionName, City regionCenter, ArrayList<District> regionDistricts){
-        this.regionName = regionName;
+        super(regionName);
         this.regionCenter = regionCenter;
         this.regionDistricts = new ArrayList<>();
         for(District district : regionDistricts){
             this.regionDistricts.add(district);
-            this.regionArea += district.getDistrictArea();
-            this.regionPopulation += district.getDistrictPopulation();
+            this.area += district.getDistrictArea();
+            this.population += district.getDistrictPopulation();
         }
     }
     public City getRegionCenter() {
@@ -29,19 +26,19 @@ public class Region {
     }
 
     public Integer getRegionPopulation() {
-        return regionPopulation;
+        return population;
     }
 
     public void setRegionPopulation(Integer regionPopulation) {
-        this.regionPopulation = regionPopulation;
+        this.population = regionPopulation;
     }
 
     public Double getRegionArea() {
-        return regionArea;
+        return area;
     }
 
     public void setRegionArea(Double regionArea) {
-        this.regionArea = regionArea;
+        this.area = regionArea;
     }
 
     public ArrayList<District> getRegionDistricts() {
@@ -55,10 +52,10 @@ public class Region {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Название области: ").append(regionName).append(", ");
+        builder.append("Название области: ").append(name).append(", ");
         builder.append("Областной центр: ").append(regionCenter.getCityName()).append(", ");
-        builder.append("Население области: ").append(regionPopulation).append(", ");
-        builder.append("Площадь области: ").append(regionArea).append('\n');
+        builder.append("Население области: ").append(population).append(", ");
+        builder.append("Площадь области: ").append(area).append('\n');
         builder.append("Районы").append('\n');
         for(District district: regionDistricts){
             builder.append(district.toString());
@@ -68,7 +65,7 @@ public class Region {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.regionName);
+        return Objects.hash(this.name);
     }
 
     @Override
@@ -80,10 +77,10 @@ public class Region {
             return false;
         }
         Region region = (Region) obj;
-        boolean isNameEquals = Objects.equals(this.regionName, region.regionName);
+        boolean isNameEquals = Objects.equals(this.name, region.name);
         boolean isCenterEquals = Objects.equals(this.regionCenter, region.regionCenter);
-        boolean isPopulationEquals = Objects.equals(this.regionPopulation, region.regionPopulation);
-        boolean isAreaEquals = Objects.equals(this.regionArea, region.regionArea);
+        boolean isPopulationEquals = Objects.equals(this.population, region.population);
+        boolean isAreaEquals = Objects.equals(this.area, region.area);
         boolean isDistrictEquals = this.regionDistricts.size() == region.regionDistricts.size();
         for (District district : this.regionDistricts){
             if (!region.regionDistricts.contains(district)){

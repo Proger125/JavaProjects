@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company</OriginalElement>
+  <nodes>
+    <node x="658.3372222222222" y="13.201171875">com.company.Vegetables</node>
+    <node x="271.0" y="178.201171875">com.company.SortingStrategies</node>
+    <node x="523.0" y="178.201171875">com.company.CookingStrategies</node>
+    <node x="0.0" y="143.201171875">com.company.Recipe</node>
+    <node x="624.3333333333334" y="582.201171875">com.company.Main</node>
+    <node x="776.0" y="143.201171875">com.company.Salad</node>
+    <node x="402.33333333333337" y="313.201171875">com.company.Chef</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.Main" target="com.company.Chef">
+      <point x="-21.428571428571445" y="-27.0" />
+      <point x="677.9047619047619" y="542.201171875" />
+      <point x="501.33333333333337" y="542.201171875" />
+      <point x="-99.0" y="104.5" />
+    </edge>
+    <edge source="com.company.Vegetables" target="com.company.Vegetables">
+      <point x="-80.0" y="15.0" />
+      <point x="666.3372222222222" y="63.201171875" />
+      <point x="638.3372222222222" y="63.201171875" />
+      <point x="638.3372222222222" y="35.701171875" />
+      <point x="-88.0" y="7.5" />
+    </edge>
+    <edge source="com.company.SortingStrategies" target="com.company.Vegetables">
+      <point x="0.0" y="-15.0" />
+      <point x="387.0" y="113.201171875" />
+      <point x="730.3372222222222" y="113.201171875" />
+      <point x="-16.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Chef" target="com.company.Salad">
+      <point x="138.60000000000002" y="-104.5" />
+      <point x="738.9333333333334" y="283.201171875" />
+      <point x="811.6666666666666" y="283.201171875" />
+      <point x="-71.33333333333337" y="50.0" />
+    </edge>
+    <edge source="com.company.Salad" target="com.company.Vegetables">
+      <point x="-53.5" y="-50.0" />
+      <point x="829.5" y="123.201171875" />
+      <point x="778.3372222222222" y="123.201171875" />
+      <point x="32.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Recipe" target="com.company.Vegetables">
+      <point x="-62.75" y="-50.0" />
+      <point x="62.75" y="93.201171875" />
+      <point x="698.3372222222222" y="93.201171875" />
+      <point x="-48.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Chef" target="com.company.CookingStrategies">
+      <point x="-19.800000000000068" y="-104.5" />
+      <point x="580.5333333333333" y="293.201171875" />
+      <point x="561.6666666666666" y="293.201171875" />
+      <point x="-77.33333333333337" y="15.0" />
+    </edge>
+    <edge source="com.company.Chef" target="com.company.Vegetables">
+      <point x="99.0" y="-104.5" />
+      <point x="699.3333333333334" y="273.201171875" />
+      <point x="765.5" y="273.201171875" />
+      <point x="765.5" y="123.201171875" />
+      <point x="762.3372222222222" y="123.201171875" />
+      <point x="16.0" y="15.0" />
+    </edge>
+    <edge source="com.company.CookingStrategies" target="com.company.Vegetables">
+      <point x="0.0" y="-15.0" />
+      <point x="639.0" y="123.201171875" />
+      <point x="746.3372222222222" y="123.201171875" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Salad">
+      <point x="21.428571428571416" y="-27.0" />
+      <point x="720.7619047619048" y="542.201171875" />
+      <point x="931.6056349206349" y="542.201171875" />
+      <point x="931.6056349206349" y="293.201171875" />
+      <point x="954.3333333333333" y="293.201171875" />
+      <point x="71.33333333333326" y="50.0" />
+    </edge>
+    <edge source="com.company.Chef" target="com.company.SortingStrategies">
+      <point x="-99.00000000000011" y="-104.5" />
+      <point x="501.33333333333326" y="273.201171875" />
+      <point x="387.0" y="273.201171875" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.company.Chef" target="com.company.Recipe">
+      <point x="-178.20000000000016" y="-104.5" />
+      <point x="422.1333333333332" y="293.201171875" />
+      <point x="209.16666666666669" y="293.201171875" />
+      <point x="83.66666666666669" y="50.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Recipe">
+      <point x="-64.2857142857143" y="-27.0" />
+      <point x="635.047619047619" y="562.201171875" />
+      <point x="78.16666666666674" y="562.201171875" />
+      <point x="78.16666666666674" y="293.201171875" />
+      <point x="41.83333333333337" y="293.201171875" />
+      <point x="-83.66666666666663" y="50.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Vegetables">
+      <point x="42.85714285714283" y="-27.0" />
+      <point x="742.1904761904761" y="552.201171875" />
+      <point x="1000.5" y="552.201171875" />
+      <point x="1000.5" y="103.201171875" />
+      <point x="810.3372222222222" y="103.201171875" />
+      <point x="63.999999999999986" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="505.5" y="311.5" />
+  <SelectedNodes>
+    <node>com.company.Vegetables</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

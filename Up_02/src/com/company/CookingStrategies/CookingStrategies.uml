@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company.CookingStrategies</OriginalElement>
+  <nodes>
+    <node x="240.0" y="80.0">com.company.CookingStrategies.Boiling</node>
+    <node x="120.0" y="0.0">com.company.CookingStrategies.Cooking</node>
+    <node x="124.0" y="80.0">com.company.CookingStrategies.Frying</node>
+    <node x="0.0" y="80.0">com.company.CookingStrategies.Stewing</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.CookingStrategies.Boiling" target="com.company.CookingStrategies.Cooking">
+      <point x="0.0" y="-15.0" />
+      <point x="292.0" y="55.0" />
+      <point x="206.66666666666666" y="55.0" />
+      <point x="34.66666666666666" y="15.0" />
+    </edge>
+    <edge source="com.company.CookingStrategies.Frying" target="com.company.CookingStrategies.Cooking">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.company.CookingStrategies.Stewing" target="com.company.CookingStrategies.Cooking">
+      <point x="0.0" y="-15.0" />
+      <point x="52.0" y="55.0" />
+      <point x="137.33333333333334" y="55.0" />
+      <point x="-34.66666666666666" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="172.0" y="55.0" />
+  <SelectedNodes>
+    <node>com.company.CookingStrategies.Stewing</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

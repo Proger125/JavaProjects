@@ -3,28 +3,26 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class District {
-    private String districtName;
+public class District extends AdministrativeUnit{
     private City districtCenter;
-    private Integer districtPopulation = 0;
-    private Double districtArea = 0.0;
+
     private ArrayList<City> districtCities;
 
     public String getDistrictName() {
-        return districtName;
+        return name;
     }
 
     public void setDistrictName(String districtName) {
-        this.districtName = districtName;
+        this.name = districtName;
     }
 
     public District(String districtName, City districtCenter, ArrayList<City> districtCities){
-        this.districtName = districtName;
+        super(districtName);
         this.districtCenter = districtCenter;
         this.districtCities = new ArrayList<>();
         for (City city: districtCities){
-            this.districtPopulation += city.getCityPopulation();
-            this.districtArea += city.getCityArea();
+            this.population += city.getCityPopulation();
+            this.area += city.getCityArea();
             this.districtCities.add(city);
         }
     }
@@ -37,19 +35,19 @@ public class District {
     }
 
     public Integer getDistrictPopulation() {
-        return districtPopulation;
+        return population;
     }
 
     public void setDistrictPopulation(Integer districtPopulation) {
-        this.districtPopulation = districtPopulation;
+        this.population = districtPopulation;
     }
 
     public Double getDistrictArea() {
-        return districtArea;
+        return area;
     }
 
     public void setDistrictArea(Double districtArea) {
-        this.districtArea = districtArea;
+        this.area = districtArea;
     }
 
     public ArrayList<City> getDistrictCities() {
@@ -63,10 +61,10 @@ public class District {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Район: ").append(districtName).append(", ");
+        builder.append("Район: ").append(name).append(", ");
         builder.append("Районный центр: ").append(districtCenter.getCityName()).append(", ");
-        builder.append("Население района: ").append(districtPopulation).append(", ");
-        builder.append("Площадь района: ").append(districtArea).append('\n');
+        builder.append("Население района: ").append(population).append(", ");
+        builder.append("Площадь района: ").append(area).append('\n');
         builder.append("Города: ").append('\n');
         for (City city: districtCities){
             builder.append(city.toString());
@@ -76,7 +74,7 @@ public class District {
 
     @Override
     public int hashCode() {
-        return Objects.hash(this.districtName);
+        return Objects.hash(this.name);
     }
 
     @Override
@@ -88,10 +86,10 @@ public class District {
             return false;
         }
         District district = (District) obj;
-        boolean isNameEquals = Objects.equals(this.districtName, district.districtName);
+        boolean isNameEquals = Objects.equals(this.name, district.name);
         boolean isCenterEquals = Objects.equals(this.districtCenter, district.districtCenter);
-        boolean isPopulationEquals = Objects.equals(this.districtPopulation, district.districtPopulation);
-        boolean isAreaEquals = Objects.equals(this.districtArea, district.districtArea);
+        boolean isPopulationEquals = Objects.equals(this.population, district.population);
+        boolean isAreaEquals = Objects.equals(this.area, district.area);
         boolean isCitiesEquals = true;
         for (City city : this.districtCities){
             if (!district.districtCities.contains(city)){

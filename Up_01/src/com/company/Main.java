@@ -10,6 +10,8 @@ public class Main {
         try {
             Reader reader = new Reader(new File("res/Belarus.txt"));
             Country country = reader.readData();
+            System.out.println(country.getPopulation());
+            System.out.println(country.toString());
             System.out.println("Столица: ");
             System.out.println(country.getCapital());
             ArrayList<City> regionCenters = country.getRegionCities();

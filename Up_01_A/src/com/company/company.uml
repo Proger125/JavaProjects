@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.company</OriginalElement>
+  <nodes>
+    <node x="219.0" y="0.0">com.company.WindowState</node>
+    <node x="561.9019444444443" y="239.0">com.company.Door</node>
+    <node x="379.4311111111111" y="521.0">com.company.House</node>
+    <node x="554.4019444444443" y="0.0">com.company.DoorState</node>
+    <node x="88.83083333333332" y="272.0">com.company.Window</node>
+    <node x="342.9375" y="868.0">com.company.Main</node>
+    <node x="0.0" y="0.0">com.company.WindowType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.company.Window" target="com.company.WindowState">
+      <point x="31.375" y="-83.0" />
+      <point x="245.70583333333332" y="214.0" />
+      <point x="252.5" y="214.0" />
+      <point x="-67.0" y="94.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.House">
+      <point x="9.375" y="-27.0" />
+      <point x="427.3125" y="818.0" />
+      <point x="461.1811111111111" y="818.0" />
+      <point x="-81.75" y="138.5" />
+    </edge>
+    <edge source="com.company.Window" target="com.company.WindowType">
+      <point x="-94.125" y="-83.0" />
+      <point x="120.20583333333332" y="214.0" />
+      <point x="99.5" y="214.0" />
+      <point x="0.0" y="94.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.WindowState">
+      <point x="-9.375" y="-27.0" />
+      <point x="408.5625" y="818.0" />
+      <point x="368.9311111111111" y="818.0" />
+      <point x="368.9311111111111" y="214.0" />
+      <point x="386.5" y="214.0" />
+      <point x="67.0" y="94.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Door">
+      <point x="46.875" y="-27.0" />
+      <point x="464.8125" y="838.0" />
+      <point x="716.931111111111" y="838.0" />
+      <point x="716.931111111111" y="501.0" />
+      <point x="683.7019444444443" y="501.0" />
+      <point x="34.799999999999955" y="116.0" />
+    </edge>
+    <edge source="com.company.Door" target="com.company.DoorState">
+      <point x="-43.5" y="-116.0" />
+      <point x="605.4019444444443" y="214.0" />
+      <point x="600.4019444444443" y="214.0" />
+      <point x="-46.0" y="94.5" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.Window">
+      <point x="-46.875" y="-27.0" />
+      <point x="371.0625" y="838.0" />
+      <point x="140.91666666666669" y="838.0" />
+      <point x="140.91666666666669" y="501.0" />
+      <point x="120.20583333333332" y="501.0" />
+      <point x="-94.125" y="83.0" />
+    </edge>
+    <edge source="com.company.House" target="com.company.Door">
+      <point x="0.0" y="-138.5" />
+      <point x="542.931111111111" y="501.0" />
+      <point x="579.3019444444444" y="501.0" />
+      <point x="-69.60000000000002" y="116.0" />
+    </edge>
+    <edge source="com.company.Main" target="com.company.WindowType">
+      <point x="-65.625" y="-27.0" />
+      <point x="352.3125" y="848.0" />
+      <point x="55.23305555555555" y="848.0" />
+      <point x="55.23305555555555" y="214.0" />
+      <point x="33.166666666666686" y="214.0" />
+      <point x="-66.33333333333331" y="94.5" />
+    </edge>
+    <edge source="com.company.House" target="com.company.Window">
+      <point x="-130.8" y="-138.5" />
+      <point x="412.13111111111107" y="501.0" />
+      <point x="245.70583333333332" y="501.0" />
+      <point x="31.375" y="83.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="233.0" y="248.0" />
+  <SelectedNodes>
+    <node>com.company.WindowState</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
