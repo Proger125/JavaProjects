@@ -1,5 +1,4 @@
 package com.company.Model;
-import java.io.IOException;
 
 public class Country {
     String name;
