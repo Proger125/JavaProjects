@@ -14,12 +14,13 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage){
         primaryStage.setTitle("Up_07");
-        Components components = new Components();
-        manager.subscribe(components);
-
+        Component1 component1 = new Component1();
+        Component2 component2 = new Component2();
+        manager.subscribe(component1);
+        manager.subscribe(component2);
         BorderPane pane = new BorderPane();
-        pane.setLeft(components.label);
-        pane.setRight(components.area);
+        pane.setLeft(component1.label);
+        pane.setRight(component2.area);
 
         Scene scene = new Scene(pane, 500, 275);
         scene.setOnKeyPressed(keyEvent -> {

@@ -1,23 +1,21 @@
 package sample;
 
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Font;
 
-public class Components implements EventListener{
+public class Component1 implements EventListener{
     public Label label = new Label();
-    public TextArea area = new TextArea();
-    public Components(){
-        area.setEditable(false);
-        area.setMaxWidth(100);
-        area.setFocusTraversable(false);
+    public Component1(){
         label.setMaxWidth(250);
+        label.setAlignment(Pos.CENTER);
         Font font = new Font(30);
         label.setFont(font);
     }
     @Override
     public void update(String keyPressed) {
         label.setText(keyPressed);
-        area.appendText(keyPressed + '\n');
+
     }
 }
