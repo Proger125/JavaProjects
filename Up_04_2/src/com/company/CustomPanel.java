@@ -8,13 +8,12 @@ import java.awt.event.*;
 import java.io.File;
 
 public class CustomPanel extends JPanel {
-    private final JFrame parentFrame;
     private final Model model;
     private static final int MARGIN = 100;
     private final Timer timer;
-    public CustomPanel(JFrame frame, Model model){
+    public CustomPanel(Model model){
+        super();
         this.model = model;
-        this.parentFrame = frame;
         this.setSize(new Dimension(500, 500));
         this.setLayout(new BorderLayout());
         this.addComponents();
@@ -22,14 +21,13 @@ public class CustomPanel extends JPanel {
     }
 
     @Override
-    public void paint(Graphics g) {
-        super.paint(g);
+    public void paintComponent(Graphics g) {
         if (model.getImageIcon() != null){
             int radius = Math.min(this.getWidth() / 2, this.getHeight() / 2);
             model.setRadius(radius);
             int halfWidth = model.getImageIcon().getIconWidth() / 2;
             int halfHeight = model.getImageIcon().getIconHeight() / 2;
-            g.drawImage(model.getImageIcon().getImage(), (int)(radius + (radius - halfWidth) * Math.cos(model.getAngle()) - halfWidth), (int)(radius - (radius - halfHeight) * Math.sin(model.getAngle()) - halfHeight), null);
+            this.getGraphics().drawImage(model.getImageIcon().getImage(), (int)(radius + (radius - halfWidth) * Math.cos(model.getAngle()) - halfWidth), (int)(radius - (radius - halfHeight) * Math.sin(model.getAngle()) - halfHeight), null);
         }
     }
     private void addComponents(){
@@ -82,7 +80,7 @@ public class CustomPanel extends JPanel {
             if (res == JFileChooser.APPROVE_OPTION){
                 File targetFile = chooser.getSelectedFile();
                 model.setImageIcon(new ImageIcon(targetFile.getPath()));
-                panel.repaint();
+                this.panel.repaint();
             }
         }
     }
