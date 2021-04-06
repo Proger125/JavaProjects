@@ -20,12 +20,12 @@ public class Controller implements Initializable{
     public Circle circle;
     public Controller(){
         model = new Model();
-        model.addElement("Натуральное число", "^(\\+?[1-9][0-9]*)$");
-        model.addElement("Целое число", "^(0|[-\\+]?[1-9][0-9]*)$");
-        model.addElement("Дробное число", "^[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)+(?:[eE][-\\\\+]?[0-9]+)?$");
-        model.addElement("Дата", "(^(((0[1-9]|1[0-9]|2[0-8])[\\.](0[1-9]|1[012]))|((29|30|31)[\\.](0[13578]|1[02]))|((29|30)[\\.](0[4,6,9]|11)))[\\.](19|[2-9][0-9])\\d\\d$)|(^29[\\.]02[\\.](19|[2-9][0-9])(00|04|08|12|16|20|24|28|32|36|40|44|48|52|56|60|64|68|72|76|80|84|88|92|96)$)");
-        model.addElement("Email", "[a-z].?([-a-z0-9!#$%&'*+/=?^_`{|}~]+(\\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\\.)*(com|net|org|pro|tel|travel)");
-        model.addElement("Время", "^(([0,1][0-9])|(2[0-3])):[0-5][0-9]$");
+        model.addElement("Натуральное число", RegularExpressions.NATURAL_REGEXP);
+        model.addElement("Целое число", RegularExpressions.INTEGER_REGEXP);
+        model.addElement("Дробное число", RegularExpressions.DOUBLE_REGEXP);
+        model.addElement("Дата", RegularExpressions.DATE_REGEXP);
+        model.addElement("Email", RegularExpressions.EMAIL_REGEXP);
+        model.addElement("Время", RegularExpressions.TIME_REGEXP);
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
