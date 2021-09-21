@@ -1,9 +1,6 @@
 package edu.bsu.ds_01.view;
 
-import edu.bsu.ds_01.controller.main.ChangeTextController;
-import edu.bsu.ds_01.controller.main.OpenFileController;
-import edu.bsu.ds_01.controller.main.SaveAsFileController;
-import edu.bsu.ds_01.controller.main.SaveFileController;
+import edu.bsu.ds_01.controller.main.*;
 import edu.bsu.ds_01.controller.option.CheckTransfersController;
 import edu.bsu.ds_01.controller.option.OpenOptionFileController;
 import edu.bsu.ds_01.model.OptionFileModel;
@@ -41,10 +38,11 @@ public class CustomFrame extends JFrame {
         menuBar.add(createFileMenu());
         menuBar.add(createOptionMenu());
 
+        this.addWindowListener(new ExitListener(model));
         this.setJMenuBar(menuBar);
         this.setContentPane(mainPanel);
         this.setSize(800, 500);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         this.setVisible(true);
     }
 

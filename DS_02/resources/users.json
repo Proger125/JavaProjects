@@ -1,0 +1,98 @@
+[
+  {
+    "name" : "Gleb",
+    "surname" : "Lashuk",
+    "age" : 19,
+    "gender" : "MALE",
+    "appearance" : {
+      "height" : 190,
+      "weight" : 100,
+      "hairColor" : "BROWN",
+      "eyeColor" : "GRAY"
+    },
+    "financeInfo" : {
+      "income" : 700,
+      "accommodation" : "NONE"
+    },
+    "otherInfo" : {
+      "isDivorced" : false,
+      "childrenAmount" : 0
+    },
+    "requirements" : {
+      "name" : "Anastasia",
+      "surname" : "Kovaleva"
+    }
+  },
+  {
+    "name" : "Anastasia",
+    "surname" : "Kovaleva",
+    "age" : 19,
+    "gender" : "FEMALE",
+    "appearance" : {
+      "height" : 165,
+      "weight" : 55,
+      "hairColor" : "GRAY",
+      "eyeColor" : "GREEN"
+    },
+    "financeInfo" : {
+      "income" : 200,
+      "accommodation" : "NONE"
+    },
+    "otherInfo" : {
+      "isDivorced" : false,
+      "childrenAmount" : 0
+    },
+    "requirements" : {
+      "name" : "Gleb",
+      "surname" : "Lashuk"
+    }
+  },
+  {
+    "name" : "Daniel",
+    "surname" : "Bovshic",
+    "age" : 19,
+    "gender" : "MALE",
+    "appearance" : {
+      "height" : 150,
+      "weight" : 70,
+      "hairColor" : "BROWN",
+      "eyeColor" : "GRAY"
+    },
+    "financeInfo" : {
+      "income" : 300,
+      "accommodation" : "NONE"
+    },
+    "otherInfo" : {
+      "isDivorced" : false,
+      "childrenAmount" : 0
+    },
+    "requirements" : {
+      "weight" : 100,
+      "height" : 190
+    }
+  },
+  {
+    "name": "Aleksandra",
+    "surname": "Spirina",
+    "age": 20,
+    "gender": "FEMALE",
+    "appearance": {
+      "height": 168,
+      "weight": 59,
+      "hairColor": "GRAY",
+      "eyeColor": "BLUE"
+    },
+    "financeInfo": {
+      "income": 250,
+      "accommodation": "NONE"
+    },
+    "otherInfo": {
+      "isDivorced": false,
+      "childrenAmount": 0
+    },
+    "requirements": {
+      "name": "Daniel",
+      "surname": "Bovshic"
+    }
+  }
+]
