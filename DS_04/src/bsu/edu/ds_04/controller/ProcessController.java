@@ -14,7 +14,7 @@ public record ProcessController(CustomModel model,
                                 CustomView view) implements ActionListener {
 
     private static final String STRING_REGEX = "\\\\?\"[\\sa-zA-Zа-яА-Я0-9(){}.,?!_=\\-+\\\\]*?\\\\?\"";
-    private static final String WORD_REGEX = "^[a-zA-z_][a-zA-Z0-9_.,;:!?]*$";
+    private static final String WORD_REGEX = "^[a-zA-z_][a-zA-Z0-9_.,;:!?\\[\\]\\(\\)]*$";
 
     @Override
     public void actionPerformed(ActionEvent e) {
