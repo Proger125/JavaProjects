@@ -2,6 +2,7 @@ package main.java.edu.bsu.shapes.swing.listener;
 
 import main.java.edu.bsu.shapes.swing.config.DrawConfig;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,12 +17,22 @@ public class ChangeColorListener implements ActionListener {
         String greenValue = GREEN_COLOR_FIELD.getText();
         String blueValue = BLUE_COLOR_FIELD.getText();
 
-        int red = getIntColor(redValue);
-        int green = getIntColor(greenValue);
-        int blue = getIntColor(blueValue);
-        Color color = new Color(red, green, blue);
-        PALETTE_PANEL.setBackground(color);
-        DrawConfig.setBorderColor(color);
+        try {
+            int red = getIntColor(redValue);
+            int green = getIntColor(greenValue);
+            int blue = getIntColor(blueValue);
+            Color color = new Color(red, green, blue);
+            PALETTE_PANEL.setBackground(color);
+            if (BORDER_COLOR_BUTTON.isSelected()) {
+                DrawConfig.setBorderColor(color);
+            } else {
+                DrawConfig.setFillColor(color);
+            }
+        } catch (IllegalArgumentException exception) {
+            JOptionPane.showMessageDialog(null, "Incorrect input data");
+        }
+
+
     }
 
     private int getIntColor(String value) {

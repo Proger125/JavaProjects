@@ -12,6 +12,8 @@ import static main.java.edu.bsu.shapes.swing.config.AllItems.*;
 import static main.java.edu.bsu.shapes.swing.config.ButtonName.LINE_BUTTON;
 import static main.java.edu.bsu.shapes.swing.config.ButtonName.RAY_BUTTON;
 import static main.java.edu.bsu.shapes.swing.config.ButtonName.SEGMENT_BUTTON;
+import static main.java.edu.bsu.shapes.swing.config.ButtonName.TRIANGLE_BUTTON;
+import static main.java.edu.bsu.shapes.swing.config.ButtonName.RECTANGLE_BUTTON;
 
 public class SelectListItemListener implements ActionListener {
 
@@ -33,6 +35,14 @@ public class SelectListItemListener implements ActionListener {
                 createSegmentOptionsPanel();
                 DrawConfig.setFigure(Figure.SEGMENT);
                 break;
+            case TRIANGLE_BUTTON:
+                createTriangleOptionsPanel();
+                DrawConfig.setFigure(Figure.TRIANGLE);
+                break;
+            case RECTANGLE_BUTTON:
+                createRectangleOptionsPanel();
+                DrawConfig.setFigure(Figure.RECTANGLE);
+                break;
         }
         DRAW_BUTTON.setEnabled(true);
         MAIN_PANEL.invalidate();
@@ -41,13 +51,50 @@ public class SelectListItemListener implements ActionListener {
 
     private void createSegmentOptionsPanel() {
         OPTIONS_PANEL.setLayout(new GridLayout(2,4));
+        addFirstPointOptions();
+        addSecondPointOptions();
+    }
+
+    private void createTriangleOptionsPanel() {
+        OPTIONS_PANEL.setLayout(new GridLayout(3, 4));
+        addFirstPointOptions();
+        addSecondPointOptions();
+        addThirdPointOptions();
+    }
+
+    private void createRectangleOptionsPanel() {
+        OPTIONS_PANEL.setLayout(new GridLayout(4, 4));
+        addFirstPointOptions();
+        addSecondPointOptions();
+        addThirdPointOptions();
+        addFourthPointOptions();
+    }
+
+    private void addFirstPointOptions() {
         OPTIONS_PANEL.add(FIRST_POINT_X_LABEL);
         OPTIONS_PANEL.add(FIRST_POINT_X_FIELD);
-        OPTIONS_PANEL.add(SECOND_POINT_X_LABEL);
-        OPTIONS_PANEL.add(SECOND_POINT_X_FIELD);
         OPTIONS_PANEL.add(FIRST_POINT_Y_LABEL);
         OPTIONS_PANEL.add(FIRST_POINT_Y_FIELD);
+    }
+
+    private void addSecondPointOptions() {
+        OPTIONS_PANEL.add(SECOND_POINT_X_LABEL);
+        OPTIONS_PANEL.add(SECOND_POINT_X_FIELD);
         OPTIONS_PANEL.add(SECOND_POINT_Y_LABEL);
         OPTIONS_PANEL.add(SECOND_POINT_Y_FIELD);
+    }
+
+    private void addThirdPointOptions() {
+        OPTIONS_PANEL.add(THIRD_POINT_X_LABEL);
+        OPTIONS_PANEL.add(THIRD_POINT_X_FIELD);
+        OPTIONS_PANEL.add(THIRD_POINT_Y_LABEL);
+        OPTIONS_PANEL.add(THIRD_POINT_Y_FIELD);
+    }
+
+    private void addFourthPointOptions() {
+        OPTIONS_PANEL.add(FOURTH_POINT_X_LABEL);
+        OPTIONS_PANEL.add(FOURTH_POINT_X_FIELD);
+        OPTIONS_PANEL.add(FOURTH_POINT_Y_LABEL);
+        OPTIONS_PANEL.add(FOURTH_POINT_Y_FIELD);
     }
 }

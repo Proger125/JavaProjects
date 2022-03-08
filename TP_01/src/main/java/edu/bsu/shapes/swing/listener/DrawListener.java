@@ -2,7 +2,9 @@ package main.java.edu.bsu.shapes.swing.listener;
 
 import main.java.edu.bsu.shapes.entity.Line;
 import main.java.edu.bsu.shapes.entity.Ray;
+import main.java.edu.bsu.shapes.entity.Rectangle;
 import main.java.edu.bsu.shapes.entity.Segment;
+import main.java.edu.bsu.shapes.entity.Triangle;
 import main.java.edu.bsu.shapes.swing.config.DrawConfig;
 
 import javax.swing.*;
@@ -18,61 +20,81 @@ public class DrawListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Graphics graphics = DRAW_PANEL.getGraphics();
-        switch (DrawConfig.getFigure()) {
-            case RAY:
-                Ray ray = createRayFromInputData();
-                ray.setBorderColor(DrawConfig.getBorderColor());
-                ray.draw(graphics);
-                break;
-            case SEGMENT:
-                Segment segment = createSegmentFromInputData();
-                segment.setBorderColor(DrawConfig.getBorderColor());
-                segment.draw(graphics);
-                break;
-            case LINE:
-                Line line = createLineFromInputData();
-                line.setBorderColor(DrawConfig.getBorderColor());
-                line.draw(graphics);
-                break;
+        try{
+            switch (DrawConfig.getFigure()) {
+                case RAY:
+                    Ray ray = createRayFromInputData();
+                    ray.setBorderColor(DrawConfig.getBorderColor());
+                    ray.draw(graphics);
+                    break;
+                case SEGMENT:
+                    Segment segment = createSegmentFromInputData();
+                    segment.setBorderColor(DrawConfig.getBorderColor());
+                    segment.draw(graphics);
+                    break;
+                case LINE:
+                    Line line = createLineFromInputData();
+                    line.setBorderColor(DrawConfig.getBorderColor());
+                    line.draw(graphics);
+                    break;
+                case TRIANGLE:
+                    Triangle triangle = createTriangleFromInputData();
+                    triangle.setBorderColor(DrawConfig.getBorderColor());
+                    triangle.setFillColor(DrawConfig.getFillColor());
+                    triangle.draw(graphics);
+                    break;
+                case RECTANGLE:
+                    Rectangle rectangle = createRectangleFromInputData();
+                    rectangle.setBorderColor(DrawConfig.getBorderColor());
+                    rectangle.setFillColor(DrawConfig.getFillColor());
+                    rectangle.draw(graphics);
+                    break;
+            }
+        } catch (IllegalArgumentException exception) {
+            JOptionPane.showMessageDialog(null, "Incorrect input data");
         }
+
         DRAW_PANEL.invalidate();
         DRAW_PANEL.validate();
     }
 
     private Ray createRayFromInputData() {
-        String firstPointX = getInputDataFromTextField(FIRST_POINT_X_FIELD);
-        String firstPointY = getInputDataFromTextField(FIRST_POINT_Y_FIELD);
-        String secondPointX = getInputDataFromTextField(SECOND_POINT_X_FIELD);
-        String secondPointY = getInputDataFromTextField(SECOND_POINT_Y_FIELD);
-
-        Point firstPoint = createPoint(firstPointX, firstPointY);
-        Point secondPoint = createPoint(secondPointX, secondPointY);
+        Point firstPoint = createPointFromTextFields(FIRST_POINT_X_FIELD, FIRST_POINT_Y_FIELD);
+        Point secondPoint = createPointFromTextFields(SECOND_POINT_X_FIELD, SECOND_POINT_Y_FIELD);
         return new Ray(firstPoint, secondPoint);
     }
 
     private Segment createSegmentFromInputData() {
-        String firstPointX = getInputDataFromTextField(FIRST_POINT_X_FIELD);
-        String firstPointY = getInputDataFromTextField(FIRST_POINT_Y_FIELD);
-        String secondPointX = getInputDataFromTextField(SECOND_POINT_X_FIELD);
-        String secondPointY = getInputDataFromTextField(SECOND_POINT_Y_FIELD);
-
-        Point firstPoint = createPoint(firstPointX, firstPointY);
-        Point secondPoint = createPoint(secondPointX, secondPointY);
+        Point firstPoint = createPointFromTextFields(FIRST_POINT_X_FIELD, FIRST_POINT_Y_FIELD);
+        Point secondPoint = createPointFromTextFields(SECOND_POINT_X_FIELD, SECOND_POINT_Y_FIELD);
         return new Segment(firstPoint, secondPoint);
     }
 
     private Line createLineFromInputData() {
-        String firstPointX = getInputDataFromTextField(FIRST_POINT_X_FIELD);
-        String firstPointY = getInputDataFromTextField(FIRST_POINT_Y_FIELD);
-        String secondPointX = getInputDataFromTextField(SECOND_POINT_X_FIELD);
-        String secondPointY = getInputDataFromTextField(SECOND_POINT_Y_FIELD);
-
-        Point firstPoint = createPoint(firstPointX, firstPointY);
-        Point secondPoint = createPoint(secondPointX, secondPointY);
+        Point firstPoint = createPointFromTextFields(FIRST_POINT_X_FIELD, FIRST_POINT_Y_FIELD);
+        Point secondPoint = createPointFromTextFields(SECOND_POINT_X_FIELD, SECOND_POINT_Y_FIELD);
         return new Line(firstPoint, secondPoint);
     }
 
-    private Point createPoint(String pointX, String pointY) {
+    private Triangle createTriangleFromInputData() {
+        Point pointA = createPointFromTextFields(FIRST_POINT_X_FIELD, FIRST_POINT_Y_FIELD);
+        Point pointB = createPointFromTextFields(SECOND_POINT_X_FIELD, SECOND_POINT_Y_FIELD);
+        Point pointC = createPointFromTextFields(THIRD_POINT_X_FIELD, THIRD_POINT_Y_FIELD);
+        return new Triangle(pointA, pointB, pointC);
+    }
+
+    private Rectangle createRectangleFromInputData() {
+        Point pointA = createPointFromTextFields(FIRST_POINT_X_FIELD, FIRST_POINT_Y_FIELD);
+        Point pointB = createPointFromTextFields(SECOND_POINT_X_FIELD, SECOND_POINT_Y_FIELD);
+        Point pointC = createPointFromTextFields(THIRD_POINT_X_FIELD, THIRD_POINT_Y_FIELD);
+        Point pointD = createPointFromTextFields(FOURTH_POINT_X_FIELD, FOURTH_POINT_Y_FIELD);
+        return new Rectangle(pointA, pointB, pointC, pointD);
+    }
+
+    private Point createPointFromTextFields(JTextField pointXField, JTextField pointYField) {
+        String pointX = pointXField.getText();
+        String pointY = pointYField.getText();
+
         validateCoordinate(pointX);
         validateCoordinate(pointY);
 
@@ -83,9 +105,5 @@ public class DrawListener implements ActionListener {
         }
 
         return new Point(x, y);
-    }
-
-    private String getInputDataFromTextField(JTextField field) {
-        return field.getText();
     }
 }

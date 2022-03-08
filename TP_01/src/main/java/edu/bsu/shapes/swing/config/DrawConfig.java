@@ -6,7 +6,17 @@ public final class DrawConfig {
 
     private static Figure figure;
 
-    private static Color borderColor;
+    private static Color borderColor = Color.BLACK;
+
+    private static Color fillColor = Color.BLACK;
+
+    public static Color getFillColor() {
+        return fillColor;
+    }
+
+    public static void setFillColor(Color fillColor) {
+        DrawConfig.fillColor = fillColor;
+    }
 
     public static Figure getFigure() {
         return figure;
