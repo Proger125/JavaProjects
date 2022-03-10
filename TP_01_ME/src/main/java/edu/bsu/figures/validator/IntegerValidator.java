@@ -1,13 +1,12 @@
-package main.java.edu.bsu.shapes.validator;
+package main.java.edu.bsu.figures.validator;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public final class CoordinateValidator {
-
+public final class IntegerValidator {
     private static final String INTEGER_REGEXP = "0|[1-9][0-9]{0,2}";
 
-    public static void validateCoordinate(String value) {
+    public static void validateInt(String value) {
         Pattern pattern = Pattern.compile(INTEGER_REGEXP);
         Matcher matcher = pattern.matcher(value);
         if (!matcher.matches()) {
@@ -15,5 +14,5 @@ public final class CoordinateValidator {
         }
     }
 
-    private CoordinateValidator() {}
+    private IntegerValidator() {}
 }

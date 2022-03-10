@@ -8,7 +8,7 @@ import static main.java.edu.bsu.shapes.swing.config.AllItems.*;
 public class ListPanel extends JPanel {
 
     public ListPanel() {
-        this.setLayout(new GridLayout(5, 1));
+        this.setLayout(new GridLayout(7, 1));
         ButtonGroup listGroup = new ButtonGroup();
 
         listGroup.add(SEGMENT_BUTTON);
@@ -25,5 +25,11 @@ public class ListPanel extends JPanel {
 
         listGroup.add(RECTANGLE_BUTTON);
         this.add(RECTANGLE_BUTTON);
+
+        listGroup.add(ELLIPSE_BUTTON);
+        this.add(ELLIPSE_BUTTON);
+
+        listGroup.add(POLYGON_BUTTON);
+        this.add(POLYGON_BUTTON);
     }
 }

@@ -8,7 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static main.java.edu.bsu.shapes.swing.config.AllItems.*;
-import static main.java.edu.bsu.shapes.validator.ColorValidator.validateColor;
+import static main.java.edu.bsu.shapes.validator.IntegerValidator.validateInt;
 
 public class ChangeColorListener implements ActionListener {
     @Override
@@ -36,7 +36,7 @@ public class ChangeColorListener implements ActionListener {
     }
 
     private int getIntColor(String value) {
-        validateColor(value);
+        validateInt(value);
         return Integer.parseInt(value);
     }
 }
