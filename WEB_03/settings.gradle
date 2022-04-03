@@ -1,0 +1,4 @@
+rootProject.name = 'WEB_03'
+include 'server'
+include 'client'
+

@@ -5,10 +5,11 @@ import edu.bsu.web.entity.Resident;
 import edu.bsu.web.exception.DaoException;
 import edu.bsu.web.exception.ResourceNotFoundException;
 
+import java.rmi.Remote;
 import java.util.List;
 import java.util.Map;
 
-public interface ResidentDao {
+public interface ResidentDao extends Remote {
 
     Resident addResident(ResidentDto dto) throws DaoException;
 

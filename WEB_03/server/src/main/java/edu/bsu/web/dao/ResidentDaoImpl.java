@@ -1,19 +1,21 @@
 package edu.bsu.web.dao;
 
-import edu.bsu.web.conncection.ConnectionPool;
+import edu.bsu.web.connection.ConnectionPool;
 import edu.bsu.web.dto.ResidentDto;
 import edu.bsu.web.entity.Address;
 import edu.bsu.web.entity.Resident;
 import edu.bsu.web.exception.DaoException;
 import edu.bsu.web.exception.ResourceNotFoundException;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ResidentDaoImpl implements ResidentDao{
+public class ResidentDaoImpl implements ResidentDao {
 
     private final ConnectionPool pool = ConnectionPool.getInstance();
 
