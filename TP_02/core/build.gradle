@@ -1,0 +1,10 @@
+ext {
+    mysqlConnectorVersion = '8.0.28'
+    hibernateVersion = '5.6.3.Final'
+}
+
+dependencies {
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.6.6'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: mysqlConnectorVersion
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: hibernateVersion
+}

@@ -1,0 +1,6 @@
+rootProject.name = 'TP_02'
+include 'core'
+include 'service'
+include 'web'
+include 'view'
+
