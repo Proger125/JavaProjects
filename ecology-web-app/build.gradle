@@ -1,0 +1,22 @@
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+allprojects {
+    apply plugin: 'java'
+    repositories {
+        mavenCentral()
+    }
+
+    ext {
+        springVersion = '2.6.6'
+        lombokVersion = '1.18.22'
+    }
+
+    dependencies {
+        implementation group: 'org.springframework.boot', name: 'spring-boot', version: springVersion
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+    }
+}
+
+
