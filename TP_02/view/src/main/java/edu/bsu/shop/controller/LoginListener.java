@@ -3,6 +3,8 @@ package edu.bsu.shop.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.bsu.shop.model.User;
 import edu.bsu.shop.view.config.ViewConfig;
+import edu.bsu.shop.view.panel.ClientPanel;
+import edu.bsu.shop.view.panel.ManagerPanel;
 import okhttp3.*;
 
 import javax.swing.*;
@@ -10,13 +12,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
-import static edu.bsu.shop.view.config.GraphicalItems.LOGIN_FIELD;
-import static edu.bsu.shop.view.config.GraphicalItems.PASSWORD_FIELD;
+import static edu.bsu.shop.view.config.GraphicalItems.*;
 
 public class LoginListener implements ActionListener {
     private static final LoginListener INSTANCE = new LoginListener();
 
     private static final String SERVER_URL = "http://localhost:8080/login";
+    private static final String CLIENT_ROLE = "CLIENT";
+    private static final String MANAGER_ROLE = "MANAGER";
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -37,6 +40,16 @@ public class LoginListener implements ActionListener {
             ObjectMapper objectMapper = new ObjectMapper();
             if (responseBody != null) {
                 ViewConfig.getInstance().setUser(objectMapper.readValue(responseBody.string(), User.class));
+                User user = ViewConfig.getInstance().getUser();
+                if (user.getRole().equals(CLIENT_ROLE)) {
+                    MAIN_FRAME.setContentPane(new ClientPanel());
+                } else if (user.getRole().equals(MANAGER_ROLE)) {
+                    MAIN_FRAME.setContentPane(new ManagerPanel());
+                }
+
+                MAIN_FRAME.invalidate();
+                MAIN_FRAME.validate();
+                MAIN_FRAME.repaint();
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Something went wrong...", "Error", JOptionPane.ERROR_MESSAGE);

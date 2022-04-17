@@ -1,4 +1,4 @@
-package edu.bsu.shop.dto;
+package edu.bsu.shop.dto.user;
 
 import edu.bsu.shop.entity.Role;
 import lombok.Data;

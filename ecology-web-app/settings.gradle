@@ -2,4 +2,5 @@ rootProject.name = 'ecology-web-app'
 include 'core'
 include 'service'
 include 'web'
+include 'security'
 

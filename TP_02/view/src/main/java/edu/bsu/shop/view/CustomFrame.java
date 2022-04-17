@@ -11,6 +11,5 @@ public class CustomFrame extends JFrame {
         this.setSize(800, 400);
         this.setContentPane(GraphicalItems.LOGIN_PANEL);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setVisible(true);
     }
 }

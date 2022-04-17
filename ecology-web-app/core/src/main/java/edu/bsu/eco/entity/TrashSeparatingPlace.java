@@ -12,11 +12,22 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@Table(name = "trash_separating_place")
 public class TrashSeparatingPlace {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "trash_separating_place_id")
     private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "address")
+    private String address;
 
     @Column(name = "latitude")
     private double latitude;
@@ -27,8 +38,10 @@ public class TrashSeparatingPlace {
     @Column(name = "working_hours")
     private String workingHours;
 
-    @Column(name = "trash_types")
-    @Enumerated(EnumType.STRING)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "trash_place_type",
+                joinColumns = {@JoinColumn(name = "trash_separating_place_id", referencedColumnName = "trash_separating_place_id")},
+                inverseJoinColumns = {@JoinColumn(name = "trash_type_id", referencedColumnName = "trash_type_id")})
     private List<TrashType> trashTypes;
 
     @Override
@@ -45,6 +58,6 @@ public class TrashSeparatingPlace {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, latitude, longitude, workingHours, trashTypes);
+        return Objects.hash(id, name, description, latitude, longitude, workingHours, trashTypes);
     }
 }

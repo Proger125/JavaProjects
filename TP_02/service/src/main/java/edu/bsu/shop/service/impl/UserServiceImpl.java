@@ -1,26 +1,23 @@
 package edu.bsu.shop.service.impl;
 
 import edu.bsu.shop.dao.UserDao;
-import edu.bsu.shop.dto.UserDto;
-import edu.bsu.shop.dto.UserLoginDto;
+import edu.bsu.shop.dto.user.UserDto;
+import edu.bsu.shop.dto.user.UserLoginDto;
 import edu.bsu.shop.entity.User;
 import edu.bsu.shop.exception.IncorrectLoginOrPasswordException;
 import edu.bsu.shop.mapper.UserMapper;
 import edu.bsu.shop.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserDao  userDao;
 
     private final UserMapper userMapper;
-
-    public UserServiceImpl(UserDao userDao, UserMapper userMapper) {
-        this.userDao = userDao;
-        this.userMapper = userMapper;
-    }
 
     @Override
     public UserDto login(UserLoginDto dto) {

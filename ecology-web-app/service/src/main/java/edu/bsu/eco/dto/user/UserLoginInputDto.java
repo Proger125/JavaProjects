@@ -1,9 +1,9 @@
-package edu.bsu.shop.dto;
+package edu.bsu.eco.dto.user;
 
 import lombok.Data;
 
 @Data
-public class UserLoginDto {
+public class UserLoginInputDto {
 
     private String login;
 
