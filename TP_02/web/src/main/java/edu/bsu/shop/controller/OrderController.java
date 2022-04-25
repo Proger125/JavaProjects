@@ -1,5 +1,6 @@
 package edu.bsu.shop.controller;
 
+import edu.bsu.shop.dto.order.ChangeStatusOrderDto;
 import edu.bsu.shop.dto.order.OrderInputDto;
 import edu.bsu.shop.dto.order.OrderOutputDto;
 import edu.bsu.shop.service.OrderService;
@@ -28,9 +29,21 @@ public class OrderController {
         return orderService.findById(id);
     }
 
+    @GetMapping("/users/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<OrderOutputDto> findByUser(@PathVariable Long id) {
+        return orderService.findByUserId(id);
+    }
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<OrderOutputDto> findAll() {
         return orderService.findAll();
+    }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public OrderOutputDto changeOrderStatus(@RequestBody ChangeStatusOrderDto dto) {
+        return orderService.changeOrderStatus(dto);
     }
 }

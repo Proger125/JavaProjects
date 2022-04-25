@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
 
 @Data
 public class UserRegisterInputDto {
@@ -15,6 +14,9 @@ public class UserRegisterInputDto {
     @NotEmpty
     private String password;
 
+    @NotEmpty
+    private String confirmPassword;
+
     @Email
     private String email;
 
@@ -23,7 +25,4 @@ public class UserRegisterInputDto {
 
     @NotEmpty
     private String lastName;
-
-    @Pattern(regexp = "^ROLE_USER|ROLE_AUTHOR$")
-    private String role;
 }

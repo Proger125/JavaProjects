@@ -1,4 +1,4 @@
-package edu.bsu.shop.controller;
+package edu.bsu.shop.listener;
 
 import edu.bsu.shop.model.Product;
 import edu.bsu.shop.view.config.ViewConfig;

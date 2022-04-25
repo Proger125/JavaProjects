@@ -2,9 +2,11 @@ package edu.bsu.shop.service.impl;
 
 import edu.bsu.shop.dao.OrderDao;
 import edu.bsu.shop.dao.ProductOrderDao;
+import edu.bsu.shop.dto.order.ChangeStatusOrderDto;
 import edu.bsu.shop.dto.order.OrderInputDto;
 import edu.bsu.shop.dto.order.OrderOutputDto;
 import edu.bsu.shop.entity.Order;
+import edu.bsu.shop.entity.User;
 import edu.bsu.shop.exception.ResourceNotFoundException;
 import edu.bsu.shop.mapper.OrderMapper;
 import edu.bsu.shop.service.OrderService;
@@ -37,9 +39,23 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public List<OrderOutputDto> findByUserId(Long id) {
+        User user = new User();
+        user.setId(id);
+        return orderDao.findOrdersByUser(user)
+                .stream().map(orderMapper::toOrderOutputDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<OrderOutputDto> findAll() {
         return orderDao.findAll().stream()
                 .map(orderMapper::toOrderOutputDto)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public OrderOutputDto changeOrderStatus(ChangeStatusOrderDto dto) {
+        return orderMapper.toOrderOutputDto(orderDao.save(orderMapper.toOrder(dto)));
     }
 }

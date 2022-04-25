@@ -14,6 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/trash-separating-places")
+@CrossOrigin(origins = "http://localhost:3000")
 public class TrashSeparatingPlaceController {
 
     private final TrashSeparatingPlaceService service;

@@ -28,6 +28,9 @@ public class TrashSeparatingPlaceInputDto {
     @Max(180)
     private double longitude;
 
+    @NotNull
+    private String phoneNumber;
+
     @Pattern(regexp = "((1[0-9])|(2[0-4])|([1-9])):[0-5][0-9]-((1[0-9])|(2[0-4])|([1-9])):[0-5][0-9]")
     private String workingHours;
 

@@ -22,5 +22,7 @@ public class TrashSeparatingPlaceOutputDto {
 
     private String workingHours;
 
+    private String phoneNumber;
+
     List<TrashType> trashTypes;
 }

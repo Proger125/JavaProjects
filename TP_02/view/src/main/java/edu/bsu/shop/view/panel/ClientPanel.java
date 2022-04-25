@@ -1,20 +1,18 @@
 package edu.bsu.shop.view.panel;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.bsu.shop.controller.AddButtonListener;
-import edu.bsu.shop.controller.OrderButtonListener;
-import edu.bsu.shop.exception.ServerException;
-import edu.bsu.shop.exception.ViewRenderException;
+import edu.bsu.shop.listener.AddButtonListener;
+import edu.bsu.shop.listener.GetOrderListener;
+import edu.bsu.shop.listener.OrderButtonListener;
+import edu.bsu.shop.model.Order;
 import edu.bsu.shop.model.Product;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.ResponseBody;
+import edu.bsu.shop.util.HttpRequestSender;
+import edu.bsu.shop.view.config.ViewConfig;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 
-import static edu.bsu.shop.view.config.GraphicalConstants.ADD_PRODUCT_BUTTON_TITLE;
+import static edu.bsu.shop.view.config.GraphicalConstants.*;
 import static edu.bsu.shop.view.config.GraphicalItems.*;
 
 public class ClientPanel extends JPanel {
@@ -24,9 +22,11 @@ public class ClientPanel extends JPanel {
         this.add(BASKET, BorderLayout.WEST);
         this.add(ORDER_BUTTON, BorderLayout.SOUTH);
         ORDER_BUTTON.addActionListener(new OrderButtonListener());
-        Product[] products = getAllProducts();
+        Product[] products = HttpRequestSender.getAllProducts();
+        Order[] orders = HttpRequestSender.getUserOrders(ViewConfig.getInstance().getUser().getId());
         try {
             renderProducts(products);
+            renderOrders(orders);
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Something went wrong...", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -38,6 +38,36 @@ public class ClientPanel extends JPanel {
             productPanel.add(renderProduct(product));
         }
         this.add(new JScrollPane(productPanel), BorderLayout.CENTER);
+    }
+
+    private void renderOrders(Order[] orders) {
+        JPanel orderPanel = new JPanel(new GridLayout(orders.length, 1));
+        for (var order : orders) {
+            orderPanel.add(renderOrder(order));
+        }
+
+        this.add(new JScrollPane(orderPanel), BorderLayout.EAST);
+    }
+
+    private JButton renderOrder(Order order) {
+        JButton button = new JButton(order.getId().toString());
+        button.setPreferredSize(new Dimension(100, 50));
+        switch (order.getOrderStatus()) {
+            case IN_PROCESS_ORDER_STATUS:
+                button.setBackground(Color.YELLOW);
+                break;
+            case CONFIRMED_BY_MANAGER_ORDER_STATUS:
+                button.setBackground(Color.BLUE);
+                break;
+            case READY_TO_PAY_ORDER_STATUS:
+                button.setBackground(Color.GREEN);
+                break;
+            case DECLAIMED_ORDER_STATUS:
+                button.setBackground(Color.RED);
+                break;
+        }
+        button.addActionListener(new GetOrderListener(order));
+        return button;
     }
 
     private JPanel renderProduct(Product product) {
@@ -70,25 +100,4 @@ public class ClientPanel extends JPanel {
 
         return panel;
     }
-
-    private Product[] getAllProducts() {
-        OkHttpClient client = new OkHttpClient().newBuilder()
-                .build();
-        Request request = new Request.Builder()
-                .url("http://localhost:8080/products")
-                .method("GET", null)
-                .build();
-        try {
-            ResponseBody responseBody = client.newCall(request).execute().body();
-            ObjectMapper objectMapper = new ObjectMapper();
-            if (responseBody != null) {
-                return objectMapper.readValue(responseBody.string(), Product[].class);
-            } else {
-                throw new ServerException();
-            }
-        } catch (IOException e) {
-            throw new ViewRenderException();
-        }
-    }
-
 }

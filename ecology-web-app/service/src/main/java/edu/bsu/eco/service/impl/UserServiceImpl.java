@@ -25,6 +25,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
+    private static final String USER_ROLE = "ROLE_USER";
+
     private final UserDao userDao;
 
     private final RoleDao roleDao;
@@ -41,7 +43,7 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public UserRegisterOutputDto register(UserRegisterInputDto dto) {
         User user = userMapper.toUser(dto);
-        Role role = roleDao.findByName(dto.getRole().toUpperCase());
+        Role role = roleDao.findByName(USER_ROLE);
         List<Role> roles = List.of(role);
         user.setRoles(roles);
         user.setPassword(passwordEncoder.encode(dto.getPassword()));

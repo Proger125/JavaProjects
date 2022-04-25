@@ -1,6 +1,7 @@
 package edu.bsu.shop.dto.order;
 
 import edu.bsu.shop.dto.productorder.ProductOrderInputDto;
+import edu.bsu.shop.dto.user.UserDto;
 import edu.bsu.shop.entity.OrderStatus;
 import lombok.Data;
 
@@ -13,6 +14,8 @@ public class OrderInputDto {
     private BigDecimal totalCost;
 
     private List<ProductOrderInputDto> products;
+
+    private UserDto user;
 
     private OrderStatus orderStatus;
 }

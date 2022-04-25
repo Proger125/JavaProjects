@@ -1,8 +1,9 @@
-package edu.bsu.shop.controller;
+package edu.bsu.shop.listener;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.bsu.shop.model.User;
 import edu.bsu.shop.view.config.ViewConfig;
+import edu.bsu.shop.view.panel.AccountantPanel;
 import edu.bsu.shop.view.panel.ClientPanel;
 import edu.bsu.shop.view.panel.ManagerPanel;
 import okhttp3.*;
@@ -24,7 +25,7 @@ public class LoginListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String login = LOGIN_FIELD.getText();
-        String password = PASSWORD_FIELD.getText();
+        String password = new String(PASSWORD_FIELD.getPassword());
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .build();
@@ -40,16 +41,17 @@ public class LoginListener implements ActionListener {
             ObjectMapper objectMapper = new ObjectMapper();
             if (responseBody != null) {
                 ViewConfig.getInstance().setUser(objectMapper.readValue(responseBody.string(), User.class));
+                System.out.println(ViewConfig.getInstance().getUser().getId());
                 User user = ViewConfig.getInstance().getUser();
                 if (user.getRole().equals(CLIENT_ROLE)) {
                     MAIN_FRAME.setContentPane(new ClientPanel());
                 } else if (user.getRole().equals(MANAGER_ROLE)) {
                     MAIN_FRAME.setContentPane(new ManagerPanel());
+                } else {
+                    MAIN_FRAME.setContentPane(new AccountantPanel());
                 }
 
-                MAIN_FRAME.invalidate();
-                MAIN_FRAME.validate();
-                MAIN_FRAME.repaint();
+                repaintFrame();
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Something went wrong...", "Error", JOptionPane.ERROR_MESSAGE);

@@ -32,6 +32,10 @@ public class Order {
     )
     private List<ProductOrder> products;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
