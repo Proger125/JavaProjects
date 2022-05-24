@@ -49,4 +49,10 @@ public class TrashSeparatingPlaceController {
         service.deleteAll();
     }
 
+    @GetMapping("/params")
+    @ResponseStatus(HttpStatus.OK)
+    public List<TrashSeparatingPlaceOutputDto> findPlacesByParams(@RequestParam List<String> trashTypes) {
+        return service.findPlacesByParams(trashTypes);
+    }
+
 }

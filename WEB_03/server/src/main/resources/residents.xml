@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<residents>
+    <resident>
+        <first-name>Aleksandr</first-name>
+        <last-name>Dzyachenka</last-name>
+        <address>
+            <city>Minsk</city>
+            <street>Lobanka</street>
+            <house-number>9</house-number>
+        </address>
+    </resident>
+    <resident>
+        <first-name>Nikita</first-name>
+        <last-name>Tolstik</last-name>
+        <address>
+            <city>Minsk</city>
+            <street>Loshitsa</street>
+            <house-number>1</house-number>
+        </address>
+    </resident>
+    <resident>
+        <first-name>Roman</first-name>
+        <last-name>Rouba</last-name>
+        <address>
+            <city>Homel</city>
+            <street>Lenina</street>
+            <house-number>3</house-number>
+        </address>
+    </resident>
+    <resident>
+        <first-name>Sasha</first-name>
+        <last-name>Burkovskiy</last-name>
+        <address>
+            <city>Baranovichi</city>
+            <street>Sovetskaya</street>
+            <house-number>2</house-number>
+        </address>
+    </resident>
+</residents>

@@ -1,19 +1,8 @@
 package edu.bsu.web.exception;
 
+/**
+ * Custom exception class. It throws when DAO method couldn't find something in the storage
+ * @author Aleksandr_Dzyachenka
+ */
 public class ResourceNotFoundException extends Exception{
-    public ResourceNotFoundException() {
-        super();
-    }
-
-    public ResourceNotFoundException(String message) {
-        super(message);
-    }
-
-    public ResourceNotFoundException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public ResourceNotFoundException(Throwable cause) {
-        super(cause);
-    }
 }

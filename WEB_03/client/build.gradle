@@ -17,7 +17,7 @@ javafx {
 }
 
 mainClassName = 'edu.bsu.web.MainClient'
-sourceCompatibility = 11
+sourceCompatibility = 16
 
 
 dependencies {

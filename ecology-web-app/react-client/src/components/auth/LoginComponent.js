@@ -22,7 +22,7 @@ export default class LoginComponent extends Component {
             }
         ).catch(
             err => {
-                console.log(err);
+
             }
         )
     };
@@ -31,9 +31,9 @@ export default class LoginComponent extends Component {
             return <Redirect to={'/account'} />
         }
         return (
-            <div className="auth-wrapper">
-                <div className="auth-inner">
-                    <form className="auth-form" onSubmit={this.handleSubmit}>
+            <div className="form-wrapper">
+                <div className="form-inner">
+                    <form className="custom-form" onSubmit={this.handleSubmit}>
                         <h3>Login</h3>
                         <div className="form-group">
                             <label htmlFor="">Username</label>

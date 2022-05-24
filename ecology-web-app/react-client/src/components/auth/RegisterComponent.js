@@ -13,7 +13,6 @@ export default class RegisterComponent extends Component {
             password: this.password,
             confirmPassword: this.confirmPassword
         }
-        console.log(data);
         axios.post('registration', data).then(
             res => {
                 console.log(res);
@@ -27,9 +26,9 @@ export default class RegisterComponent extends Component {
 
     render() {
         return (
-            <div className="auth-wrapper">
-                <div className="auth-inner">
-                    <form className="auth-form" onSubmit={this.handleSubmit}>
+            <div className="form-wrapper">
+                <div className="form-inner">
+                    <form className="custom-form" onSubmit={this.handleSubmit}>
                         <h3>Sign Up</h3>
                         <div className="form-group">
                             <label htmlFor="">Username</label>

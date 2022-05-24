@@ -1,20 +1,22 @@
-package edu.bsu.web.dao;
+package edu.bsu.web.dao.impl;
 
 import edu.bsu.web.connection.ConnectionPool;
+import edu.bsu.web.dao.ResidentDao;
 import edu.bsu.web.dto.ResidentDto;
 import edu.bsu.web.entity.Address;
 import edu.bsu.web.entity.Resident;
 import edu.bsu.web.exception.DaoException;
 import edu.bsu.web.exception.ResourceNotFoundException;
 
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Implementation of {@link ResidentDao} which uses JDBC to work with database
+ */
 public class ResidentDaoImpl implements ResidentDao {
 
     private final ConnectionPool pool = ConnectionPool.getInstance();
@@ -85,18 +87,17 @@ public class ResidentDaoImpl implements ResidentDao {
             } else {
                 throw new SQLException("Unable to insert new resident in ResidentDao");
             }
-            return Resident.builder()
-                    .id(residentId)
-                    .firstName(residentDto.getFirstName())
-                    .lastName(residentDto.getLastName())
-                    .address(
-                            Address.builder()
-                                    .id(addressId)
-                                    .city(residentDto.getCity())
-                                    .street(residentDto.getStreet())
-                                    .houseNumber(residentDto.getHouseNumber())
-                                    .build()
-                    ).build();
+            Resident resident = new Resident();
+            resident.setId(residentId);
+            resident.setFirstName(residentDto.getFirstName());
+            resident.setLastName(residentDto.getLastName());
+            Address address = new Address();
+            address.setId(addressId);
+            address.setCity(residentDto.getCity());
+            address.setStreet(residentDto.getStreet());
+            address.setHouseNumber(residentDto.getHouseNumber());
+            resident.setAddress(address);
+            return resident;
         } catch (SQLException e) {
             if (connection != null){
                 try{
@@ -142,18 +143,17 @@ public class ResidentDaoImpl implements ResidentDao {
             ResultSet resultSet = statement.executeQuery(GET_ALL_RESIDENTS_SQL);
             List<Resident> residents = new ArrayList<>();
             while (resultSet.next()) {
-                residents.add(Resident.builder()
-                        .id(resultSet.getLong(1))
-                        .firstName(resultSet.getString(2))
-                        .lastName(resultSet.getString(3))
-                        .address(
-                                Address.builder()
-                                        .id(resultSet.getLong(4))
-                                        .city(resultSet.getString(5))
-                                        .street(resultSet.getString(6))
-                                        .houseNumber(resultSet.getInt(7))
-                                        .build()
-                        ).build());
+                Resident resident = new Resident();
+                resident.setId(resultSet.getLong(1));
+                resident.setFirstName(resultSet.getString(2));
+                resident.setLastName(resultSet.getString(3));
+                Address address = new Address();
+                address.setId(resultSet.getLong(4));
+                address.setCity(resultSet.getString(5));
+                address.setStreet(resultSet.getString(6));
+                address.setHouseNumber(resultSet.getInt(7));
+                resident.setAddress(address);
+                residents.add(resident);
             }
             return residents;
         } catch (SQLException e) {

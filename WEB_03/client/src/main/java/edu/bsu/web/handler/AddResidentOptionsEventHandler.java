@@ -11,13 +11,33 @@ import javafx.scene.layout.GridPane;
 
 import static edu.bsu.web.MainClient.PROPERTIES;
 
-public class AddResidentOptionsEventHandler implements EventHandler<ActionEvent> {
+/**
+ * Event handler for creating form for add resident request options
+ * @author Aleksandr_Dzyachenka
+ */
+public record AddResidentOptionsEventHandler(Scene scene,
+                                             ResidentDao residentDao) implements EventHandler<ActionEvent> {
     private static final String GRID_PANE_ID = "application.gridpane.id";
 
+    /**
+     * ID of label for first name
+     */
     public static final String FIRST_NAME_FIELD_ID = "application.addresident.firstname.field.id";
+    /**
+     * ID of label for last name
+     */
     public static final String LAST_NAME_FIELD_ID = "application.addresident.lastname.field.id";
+    /**
+     * ID of label for city
+     */
     public static final String CITY_FIELD_ID = "application.addresident.city.field.id";
+    /**
+     * ID of label for street
+     */
     public static final String STREET_FIELD_ID = "application.addresident.street.field.id";
+    /**
+     * ID of label house number
+     */
     public static final String HOUSE_NUMBER_FIELD_ID = "application.addresident.housenumber.field.id";
 
     private static final String FIRST_NAME_LABEL = "application.addresident.firstname.label";
@@ -27,14 +47,6 @@ public class AddResidentOptionsEventHandler implements EventHandler<ActionEvent>
     private static final String HOUSE_NUMBER_LABEL = "application.addresident.housenumber.label";
 
     private static final String ADD_BUTTON_NAME = "application.addresident.addbutton.name";
-
-    private final Scene scene;
-    private final ResidentDao residentDao;
-
-    public AddResidentOptionsEventHandler(Scene scene, ResidentDao residentDao) {
-        this.scene = scene;
-        this.residentDao = residentDao;
-    }
 
     @Override
     public void handle(ActionEvent event) {
@@ -64,7 +76,6 @@ public class AddResidentOptionsEventHandler implements EventHandler<ActionEvent>
 
         Button addButton = new Button(PROPERTIES.getProperty(ADD_BUTTON_NAME));
         addButton.setOnAction(new AddResidentEventHandler(scene, residentDao));
-
 
 
         gridPane.add(firstNameLabel, 0, 0);

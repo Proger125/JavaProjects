@@ -5,21 +5,19 @@ import axios from "axios";
 export default class Home extends Component {
 
     state = {
-        placemarks: []
+        placemarks: [],
+        mapWidth: "100%",
+        mapHeight: "calc(100vh - 57px)"
     }
 
     componentDidMount() {
         axios.get('http://localhost:8080/trash-separating-places').then(res => {
-            res.data.forEach(element => {
-                this.setState(state => ({
-                    placemarks: [...this.state.placemarks, [element.latitude, element.longitude]]
-                }))
-            });
-            console.log(this.state.placemarks);
+            this.props.setPlacemarks(res.data);
         }).catch(err => {
 
         })
     }
+
 
     render() {
 
@@ -35,11 +33,14 @@ export default class Home extends Component {
                         }
                     } modules={
                         ["geolocation", "geocode"]
-                    }  width="100%" height="100%">
+                    }  width={this.state.mapWidth} height={this.state.mapHeight}>
                         <Clusterer>
                             {
-                                placemarks.map(n => (
-                                    <Placemark geometry={n} />
+                                this.props.placemarks.map(n => (
+                                    <Placemark geometry={[n.latitude, n.longitude]}
+                                                onClick={() => {
+                                        this.props.setTrashSeparatingPlace(n);
+                                    }}/>
                                 ))}
                         </Clusterer>
                     </Map>

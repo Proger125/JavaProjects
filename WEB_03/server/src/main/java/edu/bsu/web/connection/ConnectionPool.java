@@ -9,6 +9,9 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+/**
+ * Class for connection pool
+ */
 public class ConnectionPool {
 
     private static final int DEFAULT_POOL_SIZE = 4;
@@ -39,6 +42,10 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Return connection pool instance
+     * @return - connection pool instance
+     */
     public static ConnectionPool getInstance() {
         while (instance == null) {
             if (isCreated.compareAndSet(false, true)) {
@@ -48,6 +55,10 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Get connection from connection pool
+     * @return connection to database
+     */
     public Connection getConnection() {
         ProxyConnection connection = null;
         try {
@@ -59,6 +70,11 @@ public class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Release connection
+     * @param connection - connection to release
+     * @return true if connection was released successfully or false otherwise
+     */
     public boolean releaseConnection(Connection connection) {
         if (!(connection instanceof ProxyConnection)) {
             return false;
@@ -73,6 +89,9 @@ public class ConnectionPool {
         return true;
     }
 
+    /**
+     * Destroy connection pool
+     */
     public void destroy() {
         for (int i = 0; i < DEFAULT_POOL_SIZE; i++) {
             try {
@@ -84,6 +103,9 @@ public class ConnectionPool {
         deregisterDrivers();
     }
 
+    /**
+     * Deregister drivers for databases
+     */
     private void deregisterDrivers() {
         Enumeration<Driver> drivers = DriverManager.getDrivers();
         while (drivers.hasMoreElements()){

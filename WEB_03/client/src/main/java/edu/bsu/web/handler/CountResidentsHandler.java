@@ -8,13 +8,11 @@ import javafx.scene.control.Alert;
 
 import java.util.Map;
 
-public class CountResidentsHandler implements EventHandler<ActionEvent> {
-
-    private final ResidentDao residentDao;
-
-    public CountResidentsHandler(ResidentDao residentDao) {
-        this.residentDao = residentDao;
-    }
+/**
+ * Event handler for handling count residents request
+ * @author Aleksandr_Dzyachenka
+ */
+public record CountResidentsHandler(ResidentDao residentDao) implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {

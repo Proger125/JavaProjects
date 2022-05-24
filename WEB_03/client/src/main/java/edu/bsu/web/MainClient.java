@@ -10,9 +10,8 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +22,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.Properties;
 
+/**
+ * Main clients class
+ * @author Aleksandr_Dzyachenka
+ */
 public class MainClient extends Application {
 
     private static final String UNIQUE_BINDING_NAME = "resident_dao";
@@ -36,6 +39,9 @@ public class MainClient extends Application {
     private static final String GET_ALL_RESIDENTS_BUTTON = "application.getallresidents.button.name";
     private static final String DELETE_RESIDENT_BUTTON = "application.deleteresident.button.name";
 
+    /**
+     * Object with all javafx properties
+     */
     public static final Properties PROPERTIES = new Properties();
 
     static {
@@ -48,6 +54,11 @@ public class MainClient extends Application {
             alert.show();
         }
     }
+
+    /**
+     * Main clients method
+     * @param args - command line args
+     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -66,15 +77,14 @@ public class MainClient extends Application {
         GridPane gridPane = new GridPane();
         gridPane.setId(PROPERTIES.getProperty(GRID_PANE_ID));
         gridPane.setPadding(new Insets(15, 12, 15, 12));
-        gridPane.setVgap(20);
-        gridPane.setHgap(20);
 
+        ScrollPane scrollPane = new ScrollPane(gridPane);
         Button addResidentButton = new Button(PROPERTIES.getProperty(ADD_RESIDENT_BUTTON_NAME));
         addResidentButton.setOnAction(new AddResidentOptionsEventHandler(scene, residentDao));
         Button countResidentsButton = new Button(PROPERTIES.getProperty(COUNT_RESIDENTS_BUTTON));
         countResidentsButton.setOnAction(new CountResidentsHandler(residentDao));
         Button getAllResidentsButton = new Button(PROPERTIES.getProperty(GET_ALL_RESIDENTS_BUTTON));
-        getAllResidentsButton.setOnAction(new GetAllResidentsEventHandler(residentDao));
+        getAllResidentsButton.setOnAction(new GetAllResidentsEventHandler(residentDao, scene));
         Button deleteResidentButton = new Button(PROPERTIES.getProperty(DELETE_RESIDENT_BUTTON));
         deleteResidentButton.setOnAction(new DeleteResidentOptionsEventHandler(scene, residentDao));
 
@@ -84,7 +94,7 @@ public class MainClient extends Application {
         hBox.getChildren().add(deleteResidentButton);
 
         borderPane.setTop(hBox);
-        borderPane.setCenter(gridPane);
+        borderPane.setCenter(scrollPane);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

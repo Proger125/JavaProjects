@@ -11,11 +11,11 @@ export default class Navigation extends Component {
     render() {
         let navigationItems;
         if (this.props.user) {
-            if (this.props.user.roles[0].name === "ROLE_USER") {
+            if (this.props.user.roles[0].name === "ROLE_USER" || this.props.user.roles[0].name === "ROLE_ADMIN") {
                 navigationItems = (
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <span className="nav-link">{this.props.user.firstName + " " + this.props.user.lastName}</span>
+                            <Link to="/account" className="nav-link">{this.props.user.firstName + " " + this.props.user.lastName}</Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/" onClick={this.handleLogOut}>LogOut</Link>

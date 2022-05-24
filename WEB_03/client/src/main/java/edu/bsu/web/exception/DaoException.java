@@ -1,19 +1,9 @@
 package edu.bsu.web.exception;
 
+/**
+ * Custom exception. Throws when DAO method couldn't work correctly
+ * @author Aleksandr_Dzyachenka
+ */
 public class DaoException extends Exception {
-    public DaoException() {
-        super();
-    }
 
-    public DaoException(String message) {
-        super(message);
-    }
-
-    public DaoException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public DaoException(Throwable cause) {
-        super(cause);
-    }
 }

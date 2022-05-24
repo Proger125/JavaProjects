@@ -7,6 +7,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * Factory to create connections to database
+ * @author Aleksandr_Dzyachenka
+ */
 public class ConnectionFactory {
 
     private static final String URL;
@@ -37,6 +41,11 @@ public class ConnectionFactory {
         URL = properties.getProperty(DB_URL);
     }
 
+    /**
+     * Create connection to database
+     * @return {@link Connection} - connection to database
+     * @throws SQLException when database errors occur
+     */
     static Connection createConnection() throws SQLException {
         return DriverManager.getConnection(
                 URL,

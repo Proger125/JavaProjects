@@ -22,7 +22,7 @@ public class ClientWindow extends JFrame implements ActionListener, TCPConnectio
         clients.add(new Client("client", "client"));
     }
 
-    private static final String IP_ADDR = "10.160.73.133";
+    private static final String IP_ADDR = "localhost";
     private static final int PORT = 8189;
     private static final int WIDTH = 600;
     private static final int HEIGHT = 400;

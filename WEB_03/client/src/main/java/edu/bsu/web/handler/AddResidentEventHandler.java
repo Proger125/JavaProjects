@@ -4,24 +4,24 @@ import edu.bsu.web.dao.ResidentDao;
 import edu.bsu.web.dto.ResidentDto;
 import edu.bsu.web.entity.Resident;
 import edu.bsu.web.exception.DaoException;
+import edu.bsu.web.handler.util.DrawResidentsUtil;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
+import java.util.List;
+
 import static edu.bsu.web.MainClient.PROPERTIES;
 import static edu.bsu.web.handler.AddResidentOptionsEventHandler.*;
 
-public class AddResidentEventHandler implements EventHandler<ActionEvent> {
-
-    private final Scene scene;
-    private final ResidentDao residentDao;
-
-    public AddResidentEventHandler(Scene scene, ResidentDao residentDao) {
-        this.scene = scene;
-        this.residentDao = residentDao;
-    }
+/**
+ * Event handler for handling add resident request
+ * @author Aleksandr_Dzyachenka
+ */
+public record AddResidentEventHandler(Scene scene,
+                                      ResidentDao residentDao) implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
@@ -39,12 +39,13 @@ public class AddResidentEventHandler implements EventHandler<ActionEvent> {
             residentDto.setStreet(street);
             residentDto.setHouseNumber(houseNumber);
             Resident resident = residentDao.addResident(residentDto);
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("OK");
-            alert.setHeaderText("Resident was successfully added");
-            alert.setContentText(resident.toString());
-            alert.show();
+            alert.setTitle("Info");
+            alert.setHeaderText("User was successfully added");
+            alert.setContentText(resident.getFirstName() + " " + resident.getLastName());
+
+            List<Resident> residents = residentDao.getAll();
+            DrawResidentsUtil.drawResidents(residents, scene);
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");

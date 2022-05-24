@@ -12,7 +12,12 @@ import javafx.scene.layout.GridPane;
 import static edu.bsu.web.MainClient.PROPERTIES;
 import static edu.bsu.web.handler.AddResidentOptionsEventHandler.*;
 
-public class DeleteResidentOptionsEventHandler implements EventHandler<ActionEvent> {
+/**
+ * Event handler for creating form for delete resident request options all residents request
+ * @author Aleksandr_Dzyachenka
+ */
+public record DeleteResidentOptionsEventHandler(Scene scene,
+                                                ResidentDao residentDao) implements EventHandler<ActionEvent> {
 
     private static final String GRID_PANE_ID = "application.gridpane.id";
     private static final String FIRST_NAME_LABEL = "application.addresident.firstname.label";
@@ -20,13 +25,6 @@ public class DeleteResidentOptionsEventHandler implements EventHandler<ActionEve
     private static final String DELETE_RESIDENT_BUTTON = "application.deleteresident.button.name";
 
 
-    private final Scene scene;
-    private final ResidentDao residentDao;
-
-    public DeleteResidentOptionsEventHandler(Scene scene, ResidentDao residentDao) {
-        this.scene = scene;
-        this.residentDao = residentDao;
-    }
     @Override
     public void handle(ActionEvent event) {
         Label firstNameLabel = new Label(PROPERTIES.getProperty(FIRST_NAME_LABEL));
@@ -38,7 +36,7 @@ public class DeleteResidentOptionsEventHandler implements EventHandler<ActionEve
         GridPane gridPane = (GridPane) scene.lookup("#" + PROPERTIES.getProperty(GRID_PANE_ID));
         gridPane.getChildren().clear();
 
-        gridPane.add(firstNameLabel, 0,0);
+        gridPane.add(firstNameLabel, 0, 0);
         gridPane.add(firstNameField, 1, 0);
         gridPane.add(lastNameLabel, 0, 1);
         gridPane.add(lastNameField, 1, 1);
