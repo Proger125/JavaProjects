@@ -48,7 +48,14 @@ public interface ResidentDao extends Remote {
     List<Resident> getAll() throws DaoException, RemoteException, JAXBException;
 
     /**
-     * Delete resident by first name and last name.
+     * Delete resident by params: <ul>
+     *     <li>
+     *     first name
+     *      </li>
+     *      <li>
+     *      last name
+     *      </li>
+     * </ul>
      *
      * @param firstName residents first name
      * @param lastName residents last name

@@ -1,0 +1,29 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>formBlock</short-name>
+    <uri>blocktag</uri>
+    <tag>
+        <name>formBlockTag</name>
+        <tag-class>edu.bsu.session.web_07.tag.FormBlockTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>type</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>valueName</name>
+            <required>true</required>
+            <type>java.lang.String</type>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>

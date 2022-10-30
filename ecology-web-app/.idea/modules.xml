@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ecology-web-app.iml" filepath="$PROJECT_DIR$/.idea/modules/ecology-web-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/ecology-web-app.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ecology-web-app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ecology-web-app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.iml" filepath="$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.test.iml" filepath="$PROJECT_DIR$/.idea/modules/security/ecology-web-app.security.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.iml" filepath="$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/service/ecology-web-app.service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ecology-web-app.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ecology-web-app.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.iml" filepath="$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.main.iml" filepath="$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.test.iml" filepath="$PROJECT_DIR$/.idea/modules/web/ecology-web-app.web.test.iml" />
+    </modules>
+  </component>
+</project>

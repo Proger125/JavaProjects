@@ -17,3 +17,5 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
     annotationProcessor group:  'org.projectlombok', name: 'lombok', version:  '1.18.22'
 }
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
